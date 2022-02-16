@@ -1,0 +1,79 @@
+:root {
+  --main-color: #dfb443;
+  --sec-color: #ffffff;
+}
+
+/* FONTS */
+@font-face {
+  font-family: "UnifrakturCook-Bold-Terrible";
+  src: url("./fonts/UnifrakturCook-Bold-Terrible.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Futur2";
+  src: url("./fonts/futur2.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "AlteHaasGroteskBold";
+  src: url("./fonts/AlteHaasGroteskBold.ttf") format("opentype");
+}
+
+@font-face {
+  font-family: "AlteHaasGroteskRegular";
+  src: url("./fonts/AlteHaasGroteskRegular.ttf") format("truetype");
+}
+
+
+a {
+  color: var(--main-color);
+  -o-transition: color 0.3s ease-out, background 1s ease-in;
+  -ms-transition: color 0.3s ease-out, background 1s ease-in;
+  -moz-transition: color 0.3s ease-out, background 1s ease-in;
+  -webkit-transition: color 0.3s ease-out, background 1s ease-in;
+  text-decoration: none;
+  transition: color 0.3s ease-out, background 1s ease-in;
+}
+
+a:link,
+a:visited,
+a:active,
+a:hover,
+a:active,
+a:focus {
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--sec-color);
+  font-style: italic;
+}
+
+* {
+  box-sizing: border-box;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  /* background-image: url("./img/cxa005-grain.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed; */
+  background-color: black;
+  color: var(--sec-color);
+  font-size: 10px;
+  margin: 0;
+}
+
+nav {
+  font-family: "UnifrakturCook-Bold-Terrible", Helvetica, Arial, serif;
+  font-size: calc(1rem + 2vmin);
+  margin-top: 2.5rem;
+}
+nav > ul {
+  list-style: none;
+}
+
+
