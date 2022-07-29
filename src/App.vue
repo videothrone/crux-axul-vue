@@ -1,26 +1,52 @@
 <script setup>
-import { RouterLink, RouterView } from 'vue-router'
+import { RouterLink, RouterView } from "vue-router";
 </script>
 
 <template>
-  <header>
-     <RouterLink to="/" id="header_logo">
-        <img src="@/assets/img/cxa-circle-logo.png" alt="Crux Axul Circle Logo" class="cxa-circle-logo" />
+  <header id="header_content">
+    <RouterLink to="/" id="header_logo">
+      <img
+        src="@/assets/img/CXASticker2022PNG.png"
+        alt="Crux Axul Circle Logo"
+        class="cxa-circle-logo"
+      />
     </RouterLink>
-    <div class="wrapper">
-
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
-    </div>
+    <nav id="header_menu">
+      <ul>
+        <li>
+          <RouterLink
+            to="/releases"
+            id="releases"
+            rel="noreferrer noopener"
+            target="_self"
+            >Releases</RouterLink
+          >
+        </li>
+        <li>
+          <RouterLink
+            to="/links"
+            id="links"
+            rel="noreferrer noopener"
+            target="_self"
+            >Links</RouterLink
+          >
+        </li>
+        <li>
+          <a
+            href="mailto:cruxaxulrec@gmail.com"
+            rel="noreferrer noopener"
+            target="_self"
+            >Contact</a
+          >
+        </li>
+      </ul>
+    </nav>
   </header>
-
-  <RouterView />
+  <div id="content"><RouterView /></div>
 </template>
 
 <style>
-@import '@/assets/base.css';
+@import "@/assets/base.css";
 
 /* ANIMATION LOGO */
 
