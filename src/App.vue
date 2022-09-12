@@ -1,5 +1,6 @@
 <script setup>
 import { RouterLink, RouterView } from "vue-router";
+import Nav from "@/components/Nav.vue";
 </script>
 
 <template>
@@ -11,36 +12,7 @@ import { RouterLink, RouterView } from "vue-router";
         class="cxa-circle-logo"
       />
     </RouterLink>
-    <nav id="header_menu">
-      <ul>
-        <li>
-          <RouterLink
-            to="/releases"
-            id="releases"
-            rel="noreferrer noopener"
-            target="_self"
-            >Releases</RouterLink
-          >
-        </li>
-        <li>
-          <RouterLink
-            to="/links"
-            id="links"
-            rel="noreferrer noopener"
-            target="_self"
-            >Links</RouterLink
-          >
-        </li>
-        <li>
-          <a
-            href="mailto:cruxaxulrec@gmail.com"
-            rel="noreferrer noopener"
-            target="_self"
-            >Contact</a
-          >
-        </li>
-      </ul>
-    </nav>
+    <Nav />
   </header>
   <div id="content"><RouterView /></div>
 </template>
