@@ -60,5 +60,25 @@
         <div class="content_releases_card_cat">→ CXA006</div></a
       >
     </div>
+    <div class="content_releases_card">
+      <a
+        href="https://cruxaxul.bandcamp.com/album/crux-ii-angles-morts"
+        rel="noreferrer noopener"
+        target="_blank"
+        ><img src="@/assets/img/CXA007_thumb.jpg" />
+        <div>Sankt - Crux II: Angles Morts</div>
+        <div class="content_releases_card_cat">→ CXA007</div></a
+      >
+    </div>
+    <div class="content_releases_card">
+      <a
+        href="https://cruxaxul.bandcamp.com/album/crux-iii-3-ht-xon"
+        rel="noreferrer noopener"
+        target="_blank"
+        ><img src="@/assets/img/CXA008_thumb.jpg" />
+        <div>Circular Square - Crux III: 3-HT-(xon) s</div>
+        <div class="content_releases_card_cat">→ CXA008</div></a
+      >
+    </div>
   </div>
 </template>

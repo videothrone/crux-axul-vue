@@ -99,6 +99,7 @@ nav > ul {
 }
 
 .nav-list .active {
+  height: 100vh;
   margin-top: 5rem;
 }
 
@@ -111,7 +112,7 @@ nav > ul {
 .active {
   background-color: black;
   flex-direction: column;
-  height: 100vh;
+  // height: 100vh;
   left: 0;
   // padding: 4rem 0;
   // position: absolute;
