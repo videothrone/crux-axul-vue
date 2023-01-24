@@ -19,7 +19,6 @@ import Nav from '@/components/Nav.vue';
 
 <style lang="scss">
 @import '@/assets/base.scss';
-@import '@/assets/nav.scss';
 
 /* ANIMATION LOGO */
 @media (prefers-reduced-motion: no-preference) {
