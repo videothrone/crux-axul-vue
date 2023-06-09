@@ -5,7 +5,7 @@
 </template>
 
 <style>
-@media (min-width: 1024px) {
+@media (min-width: var(--xl)) {
   .about {
     min-height: 100vh;
     display: flex;

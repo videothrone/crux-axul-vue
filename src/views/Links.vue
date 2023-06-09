@@ -1,5 +1,5 @@
 <template>
-  <div id="content_links">
+  <div id="content__links">
     <div id="interview">
       <a
         href="http://www.fluxwebzine.it/en/interview-with-sankt-and-lymbs/"
@@ -10,7 +10,7 @@
     </div>
     <hr class="hrr_releases" />
     <div id="links">
-      <div class="links_link">
+      <div class="links__link">
         <a
           href="https://cruxaxul.bandcamp.com/"
           rel="noreferrer noopener"
@@ -18,7 +18,7 @@
           >Buy Tapes & Digital &nbsp;</a
         >
       </div>
-      <div class="links_link">
+      <div class="links__link">
         <a
           href="https://www.facebook.com/CruxAxulRec"
           rel="noreferrer noopener"
@@ -26,7 +26,7 @@
           >Facebook &nbsp;</a
         >
       </div>
-      <div class="links_link">
+      <div class="links__link">
         <a
           href="https://soundcloud.com/cruxaxul"
           rel="noreferrer noopener"
@@ -34,7 +34,7 @@
           >Soundcloud &nbsp;</a
         >
       </div>
-      <div class="links_link">
+      <div class="links__link">
         <a
           href="https://www.instagram.com/crux.axul/"
           rel="noreferrer noopener"
@@ -42,7 +42,7 @@
           >Instagram &nbsp;</a
         >
       </div>
-      <div class="links_link">
+      <div class="links__link">
         <a
           href="https://www.mixcloud.com/cruxaxul/"
           rel="noreferrer noopener"
@@ -50,7 +50,7 @@
           >Mix Series Archive &nbsp;</a
         >
       </div>
-      <div class="links_link">
+      <div class="links__link">
         <a
           href="https://www.youtube.com/channel/UCcKD1XMRMXVhO5wL29qiE4A"
           rel="noreferrer noopener"

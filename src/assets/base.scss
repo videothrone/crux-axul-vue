@@ -44,11 +44,11 @@ body {
   margin: 0;
 }
 
-#header_content {
+.header__content {
   display: flex;
   justify-content: space-between;
 }
-#header_logo {
+.header__logo {
   height: auto;
   width: 30.7rem;
   display: block;
@@ -99,7 +99,7 @@ a:hover {
   height: 30vmin;
 }
 
-#content {
+.content {
   color: var(--sec-color);
   display: flex;
   font-family: 'AlteHaasGroteskRegular', Helvetica, Arial, sans-serif;
@@ -117,7 +117,7 @@ a:hover {
   margin-bottom: 2.5rem;
 }
 
-#links .links_link {
+#links .links__link {
   width: 100%;
 }
 
@@ -133,10 +133,10 @@ a:hover {
     brightness(93%) contrast(93%);
 }
 
-#content_home {
+#content__home {
   display: flex;
 }
-#content_home .out-now {
+#content__home .out-now {
   color: black;
   font-size: 2rem;
   background-color: var(--main-color);
@@ -147,63 +147,63 @@ a:hover {
   -webkit-transition: color 0.3s ease-out, background 0.3s ease-in;
   transition: color 0.3s ease-out, background 0.3s ease-in;
 }
-#content_home .out-now:hover {
+#content__home .out-now:hover {
   background-color: var(--sec-color);
   color: black;
 }
-#content_home .content_home_img {
+#content__home .content__home-img {
   max-width: 25rem;
   margin-bottom: 1rem;
 }
-#content_home_left_credits .release-date {
+#content__home-left-credits .release-date {
   margin: 0.1rem 0 0 0;
 }
-#content_home_right {
+#content__home-right {
   padding: 0 0 0 2rem;
 }
-#content_home_right hr.hrr {
+#content__home-right hr.hrr {
   border: none;
   border-top: 0.15rem dashed var(--main-color);
   margin: 1rem 0;
 }
 
-.content_releases {
+.content__releases {
   display: grid;
   grid-gap: 1rem;
   grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
   width: 100%;
 }
 
-.content_releases .content_releases_card {
+.content__releases .content__releases-card {
   background-color: var(--main-color);
 }
 
-.content_releases .content_releases_card:hover {
+.content__releases .content__releases-card:hover {
   background-color: var(--sec-color);
   color: black;
 }
 
-.content_releases .content_releases_card:hover div {
+.content__releases .content__releases-card:hover div {
   color: black;
 }
 
-.content_releases .content_releases_card div {
+.content__releases .content__releases-card div {
   line-height: 1.2;
   color: black;
   padding-left: 1rem;
 }
 
-.content_releases .content_releases_card div:nth-child(3) {
+.content__releases .content__releases-card div:nth-child(3) {
   margin-top: 0.3rem;
   margin-bottom: 1rem;
 }
 
-.content_releases .content_releases_card img {
+.content__releases .content__releases-card img {
   max-width: 100%;
   margin-bottom: 0.5rem;
 }
 
-.content_releases .content_releases_card_cat {
+.content__releases .content__releases-card-cat {
   font-size: 1rem !important;
   color: black !important;
 }
@@ -231,7 +231,7 @@ a:hover {
     animation: logo-spin infinite 20s linear;
     animation-play-state: running;
   }
-  #header_logo .cxa-circle-logo:hover {
+  .header__logo .cxa-circle-logo:hover {
     animation-play-state: paused;
   }
 }
@@ -254,7 +254,7 @@ a:hover {
 }
 
 @media all and (max-width: 1300px) {
-  #content {
+  .content {
     margin: 0 2rem 2rem 2rem;
   }
 }
@@ -265,10 +265,10 @@ a:hover {
     display: flex;
     justify-content: center;
   }
-  #content_home {
+  #content__home {
     flex-direction: column;
   }
-  #content_home_right {
+  #content__home-right {
     margin-top: 2rem;
     padding: 0;
   }
@@ -295,32 +295,23 @@ a:hover {
 }
 
 @media all and (max-width: 500px) {
-  /* #header_content {
+  /* .header__content {
     margin: -1rem -0.6rem -1rem -1rem;
   } */
 
-  #header_logo {
+  .header__logo {
     max-width: 10rem;
   }
 
-  #content {
+  .content {
     font-size: 1rem;
   }
 
-  #content_home .content_home_img {
+  #content__home .content__home-img {
     max-width: calc(100vw - 4rem);
   }
 
-  #content_home .out-now {
+  #content__home .out-now {
     font-size: 1.4rem;
   }
 }
-
-/* @media all and (max-width: 320px) {
-  .iframe {
-    max-width: 100%;
-    width: 300px;
-    padding: 0;
-    text-align: center;
-  }
-} */

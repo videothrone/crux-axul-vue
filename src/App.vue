@@ -4,10 +4,10 @@ import Nav from '@/components/Nav.vue';
 </script>
 
 <template>
-  <header id="header_content">
-    <RouterLink to="/" id="header_logo">
+  <header class="header__content">
+    <RouterLink to="/" id="header__logo">
       <img
-        src="@/assets/img/CXASticker2022PNG.png"
+        src="@/assets/img/CXASticker2023.png"
         alt="Crux Axul Circle Logo"
         class="cxa-circle-logo"
       />
@@ -26,7 +26,7 @@ import Nav from '@/components/Nav.vue';
     animation: logo-spin infinite 20s linear;
     animation-play-state: running;
   }
-  #header_logo .cxa-circle-logo:hover {
+  .header__logo .cxa-circle-logo:hover {
     animation-play-state: paused;
   }
 }

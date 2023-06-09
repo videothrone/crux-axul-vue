@@ -1,37 +1,36 @@
 <script setup></script>
 
 <template>
-  <div id="content">
-    <div id="content_home">
-      <div id="content_home_left">
-        <div id="content_home_left_cover">
+  <div class="content">
+    <div id="content__home">
+      <div id="content__home-left">
+        <div id="content__home-left-cover">
           <a
-            href="https://cruxaxul.bandcamp.com/album/inganical"
+            href="https://cruxaxul.bandcamp.com/album/crux-iii-3-ht-xon"
             rel="noreferrer noopener"
             target="_blank"
           >
             <img
-              src="@/assets/img/CXA006_thumb.jpg"
-              alt="Sankt - Inganical"
-              class="content_home_img"
+              src="@/assets/img/CXA008_thumb.jpg"
+              alt="Cover of Crux III: 3-HT-(xon) by Circular Square"
+              class="content__home-img"
             />
           </a>
         </div>
         <div>
           <iframe
             style="border: 0; width: 100%; height: 42px"
-            src="https://bandcamp.com/EmbeddedPlayer/album=872982270/size=small/bgcol=333333/linkcol=FFFF00/transparent=true/"
-            seamless
-            ><a
-              href="https://cruxaxul.bandcamp.com/album/crux-i-terminal-beaches"
-              >Crux I: Terminal Beaches by Lymbs</a
+            src="https://bandcamp.com/EmbeddedPlayer/album=1757471793/size=small/bgcol=333333/linkcol=6156bf/transparent=true/"
+            seamless=""
+            ><a href="https://cruxaxul.bandcamp.com/album/crux-iii-3-ht-xon">
+              Crux III: 3-HT-(xon) by Circular Square</a
             ></iframe
           >
         </div>
-        <div id="content_home_left_credits">
+        <div id="content__home-left-credits">
           Digital |
           <a
-            href="https://cruxaxul.bandcamp.com/album/crux-i-terminal-beaches"
+            href="https://cruxaxul.bandcamp.com/album/crux-iii-3-ht-xon"
             rel="noreferrer noopener"
             target="_blank"
             >Buy / Listen</a
@@ -39,18 +38,18 @@
           <div class="release-date">Releasedate: 24/03/2023</div>
         </div>
       </div>
-      <div id="content_home_right">
+      <div id="content__home-right">
         <a
-          href="https://cruxaxul.bandcamp.com/album/crux-i-terminal-beaches"
+          href="https://cruxaxul.bandcamp.com/album/crux-iii-3-ht-xon"
           rel="noreferrer noopener"
           target="_blank"
         >
-          <div class="content_home_right_section out-now">
+          <div class="content__home-right-section out-now">
             OUT NOW → <br />CIRCULAR SQUARE - CRUX III: 3​-​HT​-​(​XON)
           </div></a
         >
         <hr class="hrr" />
-        <div class="content_home_right_section">
+        <div class="content__home-right-section">
           <p>
             <span class="stars">✺</span>
             The third entry into our Crux singles series comes from
@@ -91,13 +90,13 @@
           </p>
         </div>
         <hr class="hrr" />
-        <div class="content_home_right_section">
+        <div class="content__home-right-section">
           1. 3​-​HT​-​(​xon) 6:32<br />
           2. GBS_02x 5:20<br />
           3. GBS_02x (Leese Remix) 3:30<br />
         </div>
         <hr class="hrr" />
-        <div class="content_home_right_section">
+        <div class="content__home-right-section">
           Produced by Circular Square<br />
           Mastered by
           <a
