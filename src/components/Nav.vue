@@ -34,8 +34,8 @@
 
 <script>
 document.addEventListener('DOMContentLoaded', () => {
-  if (document.querySelector('.hamburger')) {
-    const hamburger = document.querySelector('.hamburger');
+  if (document.querySelector('.header__menu-button')) {
+    const hamburger = document.querySelector('.header__menu-button');
     const navMenu = document.querySelector('.nav-list');
     const navMenuItems = document.querySelectorAll('.nav-list__item');
 
@@ -78,9 +78,10 @@ document.addEventListener('DOMContentLoaded', () => {
 .header__menu-button {
   appearance: none;
   background: none;
+  border: none;
   cursor: pointer;
   display: block;
-  width: 3rem;
+  width: 5rem;
 
   @include mq($from: 768px) {
     display: none;
@@ -109,6 +110,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
 .header__menu-button.active .header__menu-button-bar {
   opacity: 0;
+}
+
+.header__menu-text {
+  clip: rect(0 0 0 0);
+  -webkit-clip-path: inset(50%);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
 }
 
 // .nav-list-container {
