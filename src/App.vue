@@ -14,7 +14,7 @@ import Nav from '@/components/Nav.vue';
     </RouterLink>
     <Nav />
   </header>
-  <div id="content"><RouterView /></div>
+  <div class="content"><RouterView /></div>
 </template>
 
 <style lang="scss">

@@ -1,9 +1,13 @@
 <template>
-  <nav id="header_menu">
-    <button class="hamburger" aria-label="menu">
-      <span class="hamburger-bar"></span>
-      <span class="hamburger-bar"></span>
-      <span class="hamburger-bar"></span>
+  <nav class="header__menu">
+    <button
+      class="header__menu-button"
+      id="header__menu-button"
+      aria-expanded="false"
+      aria-controls="header-menu"
+    >
+      <div class="header__menu-button-bar"></div>
+      <span class="header__menu-text">Navigation closed</span>
     </button>
     <div class="nav-list-container">
       <ul class="nav-list">
@@ -51,7 +55,9 @@ document.addEventListener('DOMContentLoaded', () => {
 </script>
 
 <style lang="scss">
-nav {
+@import 'sass-mq/mq';
+
+.header__menu {
   font-family: 'UnifrakturCook-Bold-Terrible', Helvetica, Arial, serif;
   font-size: calc(1rem + 2vmin);
   margin-top: 2.5rem;
@@ -65,72 +71,52 @@ nav {
   }
 }
 
-nav > ul {
+.header__menu > .nav-list {
   list-style: none;
 }
 
-#header_menu {
-  @media (max-width: 768px) {
-    position: absolute;
-    width: 100%;
-  }
-}
-
-.hamburger {
-  background-color: black;
-  border: none;
+.header__menu-button {
+  appearance: none;
+  background: none;
   cursor: pointer;
-  display: none;
+  display: block;
+  width: 3rem;
 
-  @media all and (max-width: 768px) {
-    display: block;
-    float: right;
-    padding-right: 2.1rem;
-    padding-top: 2.7rem;
-  }
-
-  .active {
-    float: right;
-    margin-top: 15rem;
+  @include mq($from: 768px) {
+    display: none;
   }
 }
 
-.hamburger-bar {
-  -webkit-transition: all 0.3s ease-in-out;
-  background-color: var(--main-color);
+.header__menu-button-bar,
+.header__menu-button::after,
+.header__menu-button::before {
+  background-color: #564cac;
+  content: '';
   display: block;
   height: 0.4rem;
-  margin: 0.2em auto;
-  transition: all 0.3s ease-in-out;
-  width: 2.5rem;
+  margin: 0.6rem 0;
+  transition: 0.3s;
+  width: 100%;
+}
+
+.header__menu-button.active::before {
+  transform: translate(0, 1rem) rotate(-45deg);
+}
+
+.header__menu-button.active::after {
+  transform: translate(0, -1rem) rotate(45deg);
+}
+
+.header__menu-button.active .header__menu-button-bar {
+  opacity: 0;
 }
 
 // .nav-list-container {
 //   @media (max-width: 768px) {
-//     .hamburger &:not(.nav-list.active) {
-//       display: none;
-//     }
+//     margin-top: 10rem;
+//     width: 100vw;
 //   }
 // }
-
-.nav-list-container {
-  @media (max-width: 768px) {
-    margin-top: 10rem;
-    width: 100vw;
-  }
-}
-
-.nav-list.active .hamburger-bar:nth-child(2) {
-  opacity: 0;
-}
-
-.nav-list.active .hamburger-bar:nth-child(1) {
-  transform: translateY(0.8rem) rotate(45deg);
-}
-
-.nav-list.active .hamburger-bar:nth-child(3) {
-  transform: translateY(-0.8rem) rotate(-45deg);
-}
 
 .nav-list {
   display: flex;

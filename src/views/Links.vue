@@ -1,6 +1,6 @@
 <template>
-  <div id="content__links">
-    <div id="interview">
+  <div class="content__links">
+    <div class="content__links-interview">
       <a
         href="http://www.fluxwebzine.it/en/interview-with-sankt-and-lymbs/"
         rel="noreferrer noopener"
@@ -9,7 +9,7 @@
       >
     </div>
     <hr class="hrr_releases" />
-    <div id="links">
+    <div class="links">
       <div class="links__link">
         <a
           href="https://cruxaxul.bandcamp.com/"
