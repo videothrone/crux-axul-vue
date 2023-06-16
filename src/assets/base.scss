@@ -1,6 +1,7 @@
 :root {
   --main-color: #564cac;
   --sec-color: #ffffff;
+  --black-color: #000;
 
   /* BREAKPOINTS */
   --l: 768px;
@@ -299,11 +300,14 @@ a:hover {
     font-size: 1rem;
   }
 
-  .content__home .content__home-img {
-    max-width: calc(100vw - 4rem);
-  }
-
   .content__home .out-now {
     font-size: 1.4rem;
+  }
+}
+
+.content__home .content__home-img {
+  @include mq($until: 768px) {
+    max-width: 100%;
+    width: 100%;
   }
 }

@@ -23,6 +23,11 @@ const router = createRouter({
       component: () => import('../views/Releases.vue'),
     },
     {
+      path: '/releases/fever-bells',
+      name: 'fever-bells',
+      component: () => import('../views/releases/fever-bells.vue'),
+    },
+    {
       path: '/links',
       name: 'links',
       component: () => import('../views/Links.vue'),

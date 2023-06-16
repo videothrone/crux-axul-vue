@@ -1,6 +1,13 @@
 <template>
-  <div class="content__releases">
-    <div class="content__releases-card">
+  <ul class="content__releases">
+    <li class="content__releases-card">
+      <a href="/releases/fever-bells"
+        ><img src="@/assets/img/CXA001_thumb.jpg" />
+        <div>Lymbs - Fever Bells</div>
+        <div class="content__releases-card-cat">→ CXA001</div>
+      </a>
+    </li>
+    <!-- <li class="content__releases-card">
       <a
         href="https://cruxaxul.bandcamp.com/album/fever-bells"
         rel="noreferrer noopener"
@@ -9,8 +16,8 @@
         <div>Lymbs - Fever Bells</div>
         <div class="content__releases-card-cat">→ CXA001</div></a
       >
-    </div>
-    <div class="content__releases-card">
+    </li> -->
+    <li class="content__releases-card">
       <a
         href="https://cruxaxul.bandcamp.com/album/new-anxieties"
         rel="noreferrer noopener"
@@ -19,8 +26,8 @@
         <div>VA - New Anxieties</div>
         <div class="content__releases-card-cat">→ CXA002</div></a
       >
-    </div>
-    <div class="content__releases-card">
+    </li>
+    <li class="content__releases-card">
       <a
         href="https://cruxaxul.bandcamp.com/album/among-nights-feral-laws"
         rel="noreferrer noopener"
@@ -29,8 +36,8 @@
         <div>Sankt & Lymbs - Among Nights / Feral Laws</div>
         <div class="content__releases-card-cat">→ CXA003</div></a
       >
-    </div>
-    <div class="content__releases-card">
+    </li>
+    <li class="content__releases-card">
       <a
         href="https://cruxaxul.bandcamp.com/album/teal-tear"
         rel="noreferrer noopener"
@@ -39,8 +46,8 @@
         <div>Opalglas - Teal / Tear</div>
         <div class="content__releases-card-cat">→ CXA004</div></a
       >
-    </div>
-    <div class="content__releases-card">
+    </li>
+    <li class="content__releases-card">
       <a
         href="https://cruxaxul.bandcamp.com/album/inganical"
         rel="noreferrer noopener"
@@ -49,8 +56,8 @@
         <div>Sankt - Inganical</div>
         <div class="content__releases-card-cat">→ CXA005</div></a
       >
-    </div>
-    <div class="content__releases-card">
+    </li>
+    <li class="content__releases-card">
       <a
         href="https://cruxaxul.bandcamp.com/album/crux-i-terminal-beaches"
         rel="noreferrer noopener"
@@ -59,8 +66,8 @@
         <div>Lymbs - Crux I: Terminal Beaches</div>
         <div class="content__releases-card-cat">→ CXA006</div></a
       >
-    </div>
-    <div class="content__releases-card">
+    </li>
+    <li class="content__releases-card">
       <a
         href="https://cruxaxul.bandcamp.com/album/crux-ii-angles-morts"
         rel="noreferrer noopener"
@@ -69,8 +76,8 @@
         <div>Sankt - Crux II: Angles Morts</div>
         <div class="content__releases-card-cat">→ CXA007</div></a
       >
-    </div>
-    <div class="content__releases-card">
+    </li>
+    <li class="content__releases-card">
       <a
         href="https://cruxaxul.bandcamp.com/album/crux-iii-3-ht-xon"
         rel="noreferrer noopener"
@@ -79,6 +86,16 @@
         <div>Circular Square - Crux III: 3-HT-(xon) s</div>
         <div class="content__releases-card-cat">→ CXA008</div></a
       >
-    </div>
-  </div>
+    </li>
+  </ul>
 </template>
+
+<style lang="scss">
+@import 'sass-mq/mq';
+
+.content__releases {
+  list-style: none;
+  margin: 0;
+  padding-left: 0;
+}
+</style>

@@ -1,5 +1,5 @@
 <template>
-  <nav class="header__menu">
+  <nav class="header__menu js-nav">
     <button
       class="header__menu-button"
       id="header__menu-button"
@@ -36,18 +36,21 @@
 document.addEventListener('DOMContentLoaded', () => {
   if (document.querySelector('.header__menu-button')) {
     const hamburger = document.querySelector('.header__menu-button');
+    const navMenuContainer = document.querySelector('.nav-list-container');
     const navMenu = document.querySelector('.nav-list');
     const navMenuItems = document.querySelectorAll('.nav-list__item');
 
     hamburger.addEventListener('click', () => {
       hamburger.classList.toggle('active');
+      navMenuContainer.classList.toggle('nav-list-container--open');
       navMenu.classList.toggle('active');
     });
 
     navMenuItems.forEach((item) => {
       item.addEventListener('click', () => {
-        hamburger.classList.toggle('active');
-        navMenu.classList.toggle('active');
+        hamburger.classList.remove('active');
+        navMenuContainer.classList.remove('nav-list-container--open');
+        navMenu.classList.remove('active');
       });
     });
   }
@@ -59,20 +62,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
 .header__menu {
   font-family: 'UnifrakturCook-Bold-Terrible', Helvetica, Arial, serif;
-  font-size: calc(1rem + 2vmin);
-  margin-top: 2.5rem;
 
-  @media (max-width: 768px) {
+  @include mq($until: 768px) {
+    font-size: 3rem;
     margin-top: 0;
   }
 
-  @media all and (max-width: 935px) {
-    font-size: calc(1rem + 1vmin);
+  @include mq($from: 768px) {
+    font-size: calc(1rem + 2vmin);
+    margin-top: 2.5rem;
   }
-}
 
-.header__menu > .nav-list {
-  list-style: none;
+  // @media all and (max-width: 935px) {
+  //   font-size: calc(1rem + 1vmin);
+  // }
 }
 
 .header__menu-button {
@@ -123,18 +126,38 @@ document.addEventListener('DOMContentLoaded', () => {
   width: 1px;
 }
 
-// .nav-list-container {
-//   @media (max-width: 768px) {
-//     margin-top: 10rem;
-//     width: 100vw;
-//   }
-// }
+.nav-list-container {
+  @include mq($until: 768px) {
+    background-color: var(--black-color);
+    bottom: 0;
+    height: 100vh;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    transition: background-color 0.2s;
+    visibility: hidden;
+  }
+}
+
+.nav-list-container--open {
+  background-color: var(--black-color);
+  overflow-x: hidden;
+  overflow-y: scroll;
+  padding-top: 11rem;
+  visibility: visible;
+  width: 100vw;
+  z-index: 103;
+}
 
 .nav-list {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: flex-end;
+  list-style: none;
+  margin: 0;
+  padding-left: 0;
   position: relative;
 
   @media (max-width: 768px) {
@@ -149,28 +172,23 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 }
 
-.nav-list .active {
-  height: 100vh;
-  margin-top: 5rem;
-}
-
-.nav-list li {
+.nav-list .nav-list__item {
   display: block;
-  margin: 0.5rem 2rem;
+  margin: 0 0 5rem 0;
   text-align: center;
+
+  @include mq($from: 768px) {
+    margin: 0.5rem 2rem;
+  }
 }
 
 .active {
   background-color: black;
-  flex-direction: column;
-  // height: 100vh;
   left: 0;
-  // padding: 4rem 0;
-  // position: absolute;
   text-align: center;
-  // top: 12.5rem;
   transition: 0.3s;
-  // width: 100%;
   z-index: 666;
+  padding-left: 0;
+  position: relative;
 }
 </style>
