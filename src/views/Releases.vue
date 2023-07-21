@@ -93,9 +93,71 @@
 <style lang="scss">
 @import 'sass-mq/mq';
 
+:root {
+  --content-card-font-color: black;
+}
+
 .content__releases {
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: repeat(2, 1fr);
   list-style: none;
   margin: 0;
   padding-left: 0;
+  width: 100%;
+
+  @include mq($from: 768px) {
+    grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+  }
+}
+
+.content__releases .content__releases-card {
+  background-color: var(--main-color);
+}
+
+.content__releases .content__releases-card:hover {
+  background-color: var(--sec-color);
+  color: var(--content-card-font-color);
+}
+
+.content__releases .content__releases-card:hover div {
+  color: var(--content-card-font-color);
+}
+
+.content__releases .content__releases-card div {
+  line-height: 1.2;
+  color: var(--content-card-font-color);
+  padding-left: 1rem;
+}
+
+.content__releases .content__releases-card div:nth-child(3) {
+  margin-top: 0.3rem;
+  margin-bottom: 1rem;
+}
+
+.content__releases .content__releases-card img {
+  max-width: 100%;
+  margin-bottom: 0.5rem;
+}
+
+.content__releases .content__releases-card-cat {
+  font-size: 1.4rem;
+  color: var(--content-card-font-color);
+
+  @include mq($from: 768px) {
+    font-size: 1.6rem;
+  }
+}
+
+.content_links {
+  display: block;
+  font-size: 1.6rem;
+  margin-top: 2rem;
+}
+
+.content_links hr.hrr_releases {
+  border: none;
+  border-top: 0.15rem dashed var(--sec-color);
+  margin: 1rem 0;
 }
 </style>
