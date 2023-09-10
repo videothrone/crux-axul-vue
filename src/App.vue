@@ -5,9 +5,9 @@ import Nav from '@/components/Nav.vue';
 
 <template>
   <header class="header__content">
-    <RouterLink to="/" id="header__logo">
+    <RouterLink to="/" class="header__logo">
       <img
-        src="@/assets/img/CXASticker2023.png"
+        src="@/assets/img/CXASticker2023trans.png"
         alt="Crux Axul Circle Logo"
         class="cxa-circle-logo"
       />

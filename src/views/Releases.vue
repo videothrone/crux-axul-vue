@@ -83,8 +83,18 @@
         rel="noreferrer noopener"
         target="_blank"
         ><img src="@/assets/img/CXA008_thumb.jpg" />
-        <div>Circular Square - Crux III: 3-HT-(xon) s</div>
+        <div>Circular Square - Crux III: 3-HT-(xon)</div>
         <div class="content__releases-card-cat">→ CXA008</div></a
+      >
+    </li>
+    <li class="content__releases-card">
+      <a
+        href="https://cruxaxul.bandcamp.com/album/crux-iv-odd-arches"
+        rel="noreferrer noopener"
+        target="_blank"
+        ><img src="@/assets/img/CXA009_thumb.jpg" />
+        <div>Fels - Crux IV: Odd Arches </div>
+        <div class="content__releases-card-cat">→ CXA009</div></a
       >
     </li>
   </ul>

@@ -1,5 +1,5 @@
 :root {
-  --main-color: #564cac;
+  --main-color: #a767bd;
   --sec-color: #ffffff;
   --black-color: #000;
 
@@ -51,6 +51,11 @@ $breakpoints: (
   src: url('./fonts/AlteHaasGroteskRegular.ttf') format('truetype');
 }
 
+@font-face {
+  font-family: 'DidactGothic';
+  src: url('./fonts/DidactGothic-Regular.otf') format('opentype');
+}
+
 html {
   font-size: 62.5%;
 }
@@ -60,7 +65,7 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed; */
-  background-color: black;
+  background-color: var(--black-color);
   color: var(--sec-color);
   font-size: 1.6rem;
   margin: 0;
@@ -126,7 +131,7 @@ a:hover {
 .content {
   color: var(--sec-color);
   display: flex;
-  font-family: 'AlteHaasGroteskRegular', Helvetica, Arial, sans-serif;
+  font-family: 'Futur2', Helvetica, Arial, sans-serif;
   font-size: 2rem;
   flex-direction: row;
   justify-content: center;
@@ -150,7 +155,7 @@ a:hover {
   gap: 4rem;
 }
 .content__home .out-now {
-  color: black;
+  color: var(--black-color);
   font-size: 3rem;
   background-color: var(--main-color);
   padding: 0.5rem 1rem;
@@ -162,7 +167,7 @@ a:hover {
 }
 .content__home .out-now:hover {
   background-color: var(--sec-color);
-  color: black;
+  color: var(--black-color);
 }
 .content__home .content__home-img {
   max-width: 25rem;
