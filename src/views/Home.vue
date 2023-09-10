@@ -37,7 +37,7 @@
         <div class="release-date">Releasedate: 24/03/2023</div>
       </div>
     </div>
-    <div id="content__home-right">
+    <div class="content__home-right">
       <a
         href="https://cruxaxul.bandcamp.com/album/crux-iii-3-ht-xon"
         rel="noreferrer noopener"
@@ -47,7 +47,6 @@
           OUT NOW → <br />CIRCULAR SQUARE - CRUX III: 3​-​HT​-​(​XON)
         </div></a
       >
-      <hr class="hrr" />
       <div class="content__home-right-section">
         <p>
           <span class="stars">✺</span>
@@ -90,7 +89,7 @@
       </div>
       <hr class="hrr" />
       <div class="content__home-right-section">
-        1. 3​-​HT​-​(​xon) 6:32<br />
+        1. 3-HT-(xon) 6:32<br />
         2. GBS_02x 5:20<br />
         3. GBS_02x (Leese Remix) 3:30<br />
       </div>
