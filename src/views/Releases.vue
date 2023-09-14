@@ -93,7 +93,7 @@
         rel="noreferrer noopener"
         target="_blank"
         ><img src="@/assets/img/CXA009_thumb.jpg" />
-        <div>Fels - Crux IV: Odd Arches </div>
+        <div>Fels - Crux IV: Odd Arches</div>
         <div class="content__releases-card-cat">→ CXA009</div></a
       >
     </li>

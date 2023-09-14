@@ -8,7 +8,7 @@
         >Label Interview</a
       >
     </div>
-    <hr class="hrr_releases" />
+    <hr class="hrr hrr__links" />
     <div class="links">
       <div class="links__link">
         <a
@@ -61,3 +61,13 @@
     </div>
   </div>
 </template>
+
+<style lang="scss">
+@use 'sass-mq/mq';
+
+hr.hrr__links {
+  border: none;
+  border-top: 0.2rem dashed var(--sec-color);
+  margin: 1rem 0;
+}
+</style>
