@@ -1,3 +1,7 @@
+@forward 'variables';
+@forward 'fonts';
+
+// Configure mq
 $breakpoints: (
   xs: 0px,
   s: 375px,
@@ -5,20 +9,14 @@ $breakpoints: (
   l: 768px,
   xl: 990px,
   xxl: 1440px,
-  navigation: 1250px,
+  navigation: 1300px,
 );
-// Configure mq
+
 @use 'sass-mq/mq' with (
   $breakpoints: $breakpoints
 );
 
-// Global colors
-:root {
-  --main-color: #a767bd;
-  --sec-color: #ffffff;
-  --black-color: #000;
-  --lol: 768px;
-}
+@forward '@/assets/release-detail';
 
 * {
   box-sizing: border-box;
@@ -28,32 +26,6 @@ $breakpoints: (
 
 // Global maximum width
 $global-max-width: 1440px;
-
-// Fonts
-@font-face {
-  font-family: 'UnifrakturCook-Bold-Terrible';
-  src: url('./fonts/UnifrakturCook-Bold-Terrible.otf') format('opentype');
-}
-
-@font-face {
-  font-family: 'Futur2';
-  src: url('./fonts/futur2.otf') format('opentype');
-}
-
-@font-face {
-  font-family: 'AlteHaasGroteskBold';
-  src: url('./fonts/AlteHaasGroteskBold.ttf') format('opentype');
-}
-
-@font-face {
-  font-family: 'AlteHaasGroteskRegular';
-  src: url('./fonts/AlteHaasGroteskRegular.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: 'DidactGothic';
-  src: url('./fonts/DidactGothic-Regular.otf') format('opentype');
-}
 
 html {
   font-size: 62.5%;
@@ -134,8 +106,12 @@ a:hover {
   font-size: 2rem;
   flex-direction: row;
   justify-content: center;
-  margin: 0 2rem 2rem 35rem;
+  margin: 0 2rem 2rem;
   line-height: 1.4;
+
+  @include mq.mq($from: navigation) {
+    margin: 0 2rem 2rem 35rem;
+  }
 }
 
 .links {
@@ -152,6 +128,12 @@ a:hover {
 .content__home {
   display: flex;
   gap: 4rem;
+}
+.content__home .content__home-img {
+  @include mq.mq($until: l) {
+    max-width: 100%;
+    width: 100%;
+  }
 }
 .content__home .out-now {
   color: var(--black-color);
@@ -209,14 +191,6 @@ a:hover {
   }
 }
 
-/* MEDIA QUERIES */
-
-@media all and (max-width: 1300px) {
-  .content {
-    margin: 0 2rem 2rem 2rem;
-  }
-}
-
 @media all and (max-width: 935px) {
   .content__home {
     flex-direction: column;
@@ -254,12 +228,5 @@ a:hover {
 
   .content__home .out-now {
     font-size: 1.4rem;
-  }
-}
-
-.content__home .content__home-img {
-  @include mq.mq($until: #{l}) {
-    max-width: 100%;
-    width: 100%;
   }
 }

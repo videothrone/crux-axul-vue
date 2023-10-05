@@ -5,7 +5,7 @@
   flex-direction: column;
   width: 100%;
 
-  @include mq.mq($from: 768px) {
+  @include mq.mq($from: l) {
     flex-direction: row;
   }
 }
@@ -15,7 +15,7 @@
   display: flex;
   flex-direction: column;
 
-  @include mq.mq($from: 768px) {
+  @include mq.mq($from: l) {
     flex-basis: 50%;
   }
 }
@@ -48,7 +48,7 @@
   background-color: var(--main-color);
   padding: 2rem;
 
-  @include mq.mq($from: 768px) {
+  @include mq.mq($from: l) {
     flex-basis: 50%;
     padding: 5rem;
   }

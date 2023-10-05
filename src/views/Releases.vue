@@ -101,7 +101,7 @@
 </template>
 
 <style lang="scss">
-@import 'sass-mq/mq';
+@use 'sass-mq/mq';
 
 :root {
   --content-card-font-color: black;
@@ -116,7 +116,7 @@
   padding-left: 0;
   width: 100%;
 
-  @include mq($from: 768px) {
+  @include mq.mq($from: 768px) {
     grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
   }
 }
@@ -154,7 +154,7 @@
   font-size: 1.4rem;
   color: var(--content-card-font-color);
 
-  @include mq($from: 768px) {
+  @include mq.mq($from: l) {
     font-size: 1.6rem;
   }
 }

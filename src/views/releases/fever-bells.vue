@@ -1,4 +1,3 @@
-export
 <template>
   <div class="content__release">
     <div class="content__release-info">

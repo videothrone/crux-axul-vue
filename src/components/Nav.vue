@@ -65,17 +65,17 @@ document.addEventListener('DOMContentLoaded', () => {
 </script>
 
 <style lang="scss">
-@import 'sass-mq/mq';
+@use 'sass-mq/mq';
 
 .header__menu {
   font-family: 'UnifrakturCook-Bold-Terrible', Helvetica, Arial, serif;
 
-  @include mq($until: 768px) {
+  @include mq.mq($until: l) {
     font-size: 3rem;
     margin-top: 0;
   }
 
-  @include mq($from: 768px) {
+  @include mq.mq($from: l) {
     font-size: calc(1rem + 2vmin);
     margin-top: 2.5rem;
   }
@@ -93,7 +93,7 @@ document.addEventListener('DOMContentLoaded', () => {
   display: block;
   width: 5rem;
 
-  @include mq($from: 768px) {
+  @include mq.mq($from: l) {
     display: none;
   }
 }
@@ -134,7 +134,7 @@ document.addEventListener('DOMContentLoaded', () => {
 }
 
 .nav-list-container {
-  @include mq($until: 768px) {
+  @include mq.mq($until: 768px) {
     background-color: var(--black-color);
     bottom: 0;
     height: 100vh;
@@ -184,7 +184,7 @@ document.addEventListener('DOMContentLoaded', () => {
   margin: 0 0 5rem 0;
   text-align: center;
 
-  @include mq($from: 768px) {
+  @include mq.mq($from: 768px) {
     margin: 0.5rem 2rem;
   }
 }
