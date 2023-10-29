@@ -1,5 +1,7 @@
 @forward 'variables';
 @forward 'fonts';
+@forward 'animations';
+@forward 'mixins';
 
 // Configure mq
 $breakpoints: (
@@ -24,22 +26,19 @@ $breakpoints: (
   -moz-osx-font-smoothing: grayscale;
 }
 
-// Global maximum width
-$global-max-width: 1440px;
-
 html {
   font-size: 62.5%;
 }
 
 body {
-  /* background-image: url("./img/cxa005-grain.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed; */
   background-color: var(--black-color);
   color: var(--sec-color);
   font-size: 1.6rem;
   margin: 0;
+
+  @include mq.mq($until: l) {
+    height: 100%;
+  }
 }
 
 .header__content {
@@ -54,6 +53,16 @@ body {
   display: block;
   position: relative;
   padding: 2.5rem;
+
+  @include mq.mq($until: m) {
+    max-width: 10rem;
+  }
+}
+
+.header__menu ul li {
+  @include mq.mq($until: l) {
+    margin: 1rem 0;
+  }
 }
 
 .header__menu ul li a,
@@ -93,6 +102,12 @@ a:hover {
 
 .iframe {
   margin: auto;
+
+  @include mq.mq($until: l) {
+    max-width: 100%;
+    width: 100%;
+    text-align: center;
+  }
 }
 
 .cxa-circle-logo {
@@ -108,6 +123,10 @@ a:hover {
   justify-content: center;
   margin: 0 2rem 2rem;
   line-height: 1.4;
+
+  @include mq.mq($until: m) {
+    font-size: 1.6rem;
+  }
 
   @include mq.mq($from: navigation) {
     margin: 0 2rem 2rem 35rem;
@@ -128,7 +147,12 @@ a:hover {
 .content__home {
   display: flex;
   gap: 4rem;
+
+  @include mq.mq($until: xl) {
+    flex-direction: column;
+  }
 }
+
 .content__home .content__home-img {
   @include mq.mq($until: l) {
     max-width: 100%;
@@ -145,20 +169,29 @@ a:hover {
   -moz-transition: color 0.3s ease-out, background 0.3s ease-in;
   -webkit-transition: color 0.3s ease-out, background 0.3s ease-in;
   transition: color 0.3s ease-out, background 0.3s ease-in;
+
+  @include mq.mq($until: m) {
+    font-size: 1.4rem;
+  }
 }
 .content__home .out-now:hover {
   background-color: var(--sec-color);
   color: var(--black-color);
 }
 .content__home .content__home-img {
-  max-width: 25rem;
   margin-bottom: 1rem;
+  max-width: 25rem;
 }
 .content__home-left-credits .release-date {
   margin: 0.1rem 0 0 0;
 }
 .content__home-right {
   padding: 0 0 0 2rem;
+
+  @include mq.mq($until: xl) {
+    margin-top: 2rem;
+    padding: 0;
+  }
 }
 
 .hrr {
@@ -169,64 +202,4 @@ a:hover {
 
 .stars {
   color: var(--main-color);
-}
-
-/* ANIMATION LOGO */
-
-@media (prefers-reduced-motion: no-preference) {
-  .cxa-circle-logo {
-    animation: logo-spin infinite 20s linear;
-    animation-play-state: running;
-  }
-  .header__logo .cxa-circle-logo:hover {
-    animation-play-state: paused;
-  }
-}
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media all and (max-width: 935px) {
-  .content__home {
-    flex-direction: column;
-  }
-  .content__home-right {
-    margin-top: 2rem;
-    padding: 0;
-  }
-}
-
-@media all and (max-width: 767px) {
-  body {
-    height: 100%;
-  }
-
-  .header__menu ul li {
-    margin: 1rem 0;
-  }
-
-  .iframe {
-    max-width: 100%;
-    width: 100%;
-    text-align: center;
-  }
-}
-
-@media all and (max-width: 500px) {
-  .header__logo {
-    max-width: 10rem;
-  }
-
-  .content {
-    font-size: 1.6rem;
-  }
-
-  .content__home .out-now {
-    font-size: 1.4rem;
-  }
 }

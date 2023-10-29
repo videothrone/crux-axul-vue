@@ -1,0 +1,19 @@
+/* ANIMATION LOGO */
+
+@media (prefers-reduced-motion: no-preference) {
+  .cxa-circle-logo {
+    animation: logo-spin infinite 20s linear;
+    animation-play-state: running;
+  }
+  .header__logo .cxa-circle-logo:hover {
+    animation-play-state: paused;
+  }
+}
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

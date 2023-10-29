@@ -28,6 +28,11 @@ const router = createRouter({
       component: () => import('../views/releases/fever-bells.vue'),
     },
     {
+      path: '/releases/release-detail',
+      name: 'release-detail',
+      component: () => import('../components/release-detail.vue'),
+    },
+    {
       path: '/links',
       name: 'links',
       component: () => import('../views/Links.vue'),
