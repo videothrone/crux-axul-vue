@@ -1,4 +1,5 @@
 @use 'sass-mq/mq';
+@use 'scss/mixins';
 
 .content__release {
   display: flex;
@@ -83,6 +84,6 @@ hr.hrr--content__release {
     list-style: none;
     margin: 0;
     padding-left: 0;
-    // @include list-reset();
+    @include mixins.list-reset();
   }
 }

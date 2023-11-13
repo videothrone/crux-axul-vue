@@ -101,7 +101,7 @@ document.addEventListener('DOMContentLoaded', () => {
 .header__menu-button-bar,
 .header__menu-button::after,
 .header__menu-button::before {
-  background-color: #564cac;
+  background-color: var(--main-color);
   content: '';
   display: block;
   height: 0.4rem;
