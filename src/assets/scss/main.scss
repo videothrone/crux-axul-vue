@@ -48,14 +48,16 @@ body {
 }
 
 .header__logo {
+  display: block;
   height: auto;
   width: 30.7rem;
-  display: block;
-  position: relative;
-  padding: 2.5rem;
 
   @include mq.mq($until: m) {
     max-width: 10rem;
+  }
+
+  @include mq.mq($from: navigation) {
+    padding-left: 2.5rem;
   }
 }
 

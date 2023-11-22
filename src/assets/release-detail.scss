@@ -2,12 +2,16 @@
 @use 'scss/mixins';
 
 .content__release {
+  align-items: center;
+  background-color: var(--sec-color);
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   width: 100%;
 
   @include mq.mq($from: xl) {
+    align-items: initial;
+    background-color: transparent;
     flex-direction: row;
   }
 }

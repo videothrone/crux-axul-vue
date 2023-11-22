@@ -91,6 +91,7 @@ document.addEventListener('DOMContentLoaded', () => {
   border: none;
   cursor: pointer;
   display: block;
+  margin: -0.5rem -0.5rem 0 0;
   width: 5rem;
 
   @include mq.mq($from: l) {
@@ -151,7 +152,7 @@ document.addEventListener('DOMContentLoaded', () => {
   background-color: var(--black-color);
   overflow-x: hidden;
   overflow-y: scroll;
-  padding-top: 11rem;
+  padding-top: 12rem;
   visibility: visible;
   width: 100vw;
   z-index: 103;
