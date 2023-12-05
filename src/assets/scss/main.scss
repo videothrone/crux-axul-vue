@@ -148,19 +148,15 @@ a:hover {
 
 .content__home {
   display: flex;
-  gap: 4rem;
+  flex-direction: column;
+  gap: 0;
 
-  @include mq.mq($until: xl) {
-    flex-direction: column;
+  @include mq.mq($from: xl) {
+    flex-direction: row;
+    gap: 4rem;
   }
 }
 
-.content__home .content__home-img {
-  @include mq.mq($until: l) {
-    max-width: 100%;
-    width: 100%;
-  }
-}
 .content__home .out-now {
   color: var(--black-color);
   font-size: 3rem;
@@ -173,7 +169,8 @@ a:hover {
   transition: color 0.3s ease-out, background 0.3s ease-in;
 
   @include mq.mq($until: m) {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
+    font-weight: bold;
   }
 }
 .content__home .out-now:hover {
@@ -182,7 +179,11 @@ a:hover {
 }
 .content__home .content__home-img {
   margin-bottom: 1rem;
-  max-width: 25rem;
+
+  @include mq.mq($until: m) {
+    max-width: 100%;
+    width: 100%;
+  }
 }
 .content__home-left-credits .release-date {
   margin: 0.1rem 0 0 0;

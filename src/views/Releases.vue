@@ -7,16 +7,6 @@
         <div class="content__releases-card-cat">→ CXA001</div>
       </a>
     </li>
-    <!-- <li class="content__releases-card">
-      <a
-        href="https://cruxaxul.bandcamp.com/album/fever-bells"
-        rel="noreferrer noopener"
-        target="_blank"
-        ><img src="@/assets/img/CXA001_thumb.jpg" />
-        <div>Lymbs - Fever Bells</div>
-        <div class="content__releases-card-cat">→ CXA001</div></a
-      >
-    </li> -->
     <li class="content__releases-card">
       <a
         href="https://cruxaxul.bandcamp.com/album/new-anxieties"

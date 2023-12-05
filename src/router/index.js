@@ -28,7 +28,7 @@ const router = createRouter({
       component: () => import('../views/releases/fever-bells.vue'),
     },
     {
-      path: '/releases/release-detail',
+      path: '/releases/:release-detail',
       name: 'release-detail',
       component: () => import('../components/release-detail.vue'),
     },
