@@ -16,6 +16,20 @@
   }
 }
 
+.content__release-back-button {
+  height: fit-content;
+
+  @include mq.mq($until: l) {
+    background-color: var(--black-color);
+    padding-bottom: 2rem;
+    width: 100%;
+  }
+
+  @include mq.mq($from: l) {
+    padding-right: 2rem;
+  }
+}
+
 .content__release-info {
   align-items: center;
   background-color: var(--sec-color);

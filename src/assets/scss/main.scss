@@ -75,7 +75,6 @@ body {
   outline: none;
   position: relative;
   width: auto;
-  margin-bottom: 2rem;
 }
 
 a {
@@ -161,7 +160,7 @@ a:hover {
   color: var(--black-color);
   font-size: 3rem;
   background-color: var(--main-color);
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 1.5rem;
   -o-transition: color 0.3s ease-out, background 0.3s ease-in;
   -ms-transition: color 0.3s ease-out, background 0.3s ease-in;
   -moz-transition: color 0.3s ease-out, background 0.3s ease-in;

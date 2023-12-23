@@ -1,5 +1,4 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import Home from '../views/Home.vue';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -7,35 +6,33 @@ const router = createRouter({
     {
       path: '/',
       name: 'home',
-      component: Home,
+      component: () => import('../views/Home.vue'),
     },
     {
       path: '/about',
       name: 'about',
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
       component: () => import('../views/About.vue'),
     },
     {
       path: '/releases',
       name: 'releases',
-      component: () => import('../views/Releases.vue'),
+      component: () => import('../views/releases/Releases.vue'),
     },
     {
-      path: '/releases/fever-bells',
-      name: 'fever-bells',
-      component: () => import('../views/releases/fever-bells.vue'),
-    },
-    {
-      path: '/releases/:release-detail',
-      name: 'release-detail',
-      component: () => import('../components/release-detail.vue'),
+      path: '/releases/:releaseDetails',
+      name: 'ReleaseDetails',
+      component: () => import('../views/releases/ReleaseDetails.vue'),
+      props: true,
     },
     {
       path: '/links',
       name: 'links',
       component: () => import('../views/Links.vue'),
+    },
+    {
+      path: '/:catchAll(.*)',
+      name: '404',
+      component: () => import('../views/404.vue'),
     },
   ],
 });

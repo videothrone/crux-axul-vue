@@ -12,7 +12,7 @@
     <div class="nav-list-container">
       <ul class="nav-list">
         <li class="nav-list__item">
-          <RouterLink to="/releases" id="releases" target="_self"
+          <RouterLink :to="{ name: 'releases' }" id="releases" target="_self"
             >Releases</RouterLink
           >
         </li>
@@ -180,10 +180,15 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 }
 
-.nav-list .nav-list__item {
+.nav-list__item {
   display: block;
   margin: 0 0 5rem 0;
   text-align: center;
+
+  .router-link-active {
+    color: var(--sec-color);
+    font-style: italic;
+  }
 
   @include mq.mq($from: 768px) {
     margin: 0.5rem 2rem;

@@ -1,4 +1,15 @@
 node_modules
-.DS_Store
 secrets.json
 .env.local
+dest
+dest-fractal
+.DS_Store
+.DS_Store?
+._*
+.Trashes
+ehthumbs.db
+Thumbs.db
+npm-debug.log
+.idea
+.vscode
+*.mo
