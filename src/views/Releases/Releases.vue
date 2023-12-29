@@ -14,7 +14,7 @@
           releaseMastering: release.releaseMastering,
           releaseArtwork: release.releaseArtwork,
         }}">
-        <img :src="`./src/assets/img/${release.releaseImg}`" />
+        <img :src="`/assets/img/${release.releaseImg}`" />
         <div>{{ release.releaseArtist }} - {{ release.releaseTitle }}</div>
         <div class="content__releases-card-cat">→ {{ release.releaseNumber }}</div>
       </RouterLink>

@@ -8,7 +8,7 @@
           target="_blank"
           class="content__release-info-link"
           ><img
-            :src="`/src/assets/img/${release.releaseImg}`"
+            :src="`/assets/img/${release.releaseImg}`"
             class="content__release-image"
           />
           <div class="content__release-info-text">{{ release.releaseTitle }}</div>
