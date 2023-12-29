@@ -27,10 +27,16 @@
           <p v-html="release.releaseBlurb"></p>
         </div>
         <hr class="hrr hrr--content__release" />
+        <div class="content__release-promotext-tracklist">
+          <div v-for="tracklist in release.releaseTracklist">
+            {{ tracklist.number }}. {{ tracklist.title }} {{ tracklist.runtime }}
+          </div>
+        </div>
+        <hr class="hrr hrr--content__release" />
         <div class="content__release-promotext-credits">
           <ul>
-            <li>Produced by {{ release.releaseProducer }}</li>
-            <li>Mastered by {{ release.releaseMastering }}</li>
+            <li v-if="release.releaseProducer">Produced by {{ release.releaseProducer }}</li>
+            <li>Mastered by <span v-html="release.releaseMastering"></span></li>
             <li>{{ release.releaseArtwork }}</li>
           </ul>
         </div>
@@ -40,33 +46,13 @@
 
 <script>
 export default {
- /*  props: ['releaseDetails', 'releaseLink', 'releaseImg', 'releaseArtist',
-   'releaseTitle', 'releaseBandcampEmbbed', 'releaseNumber', 'releaseBlurb',
-   'releaseProducer', 'releaseMastering', 'releaseArtwork'
-  ], */
-/*   data() {
-      return {
-        releaseDetails: this.$route.params.releaseDetails,
-        releaseLink: this.$route.params.releaseLink,
-        releaseImg: this.$route.params.releaseImg,
-        releaseArtist: this.$route.params.releaseArtist,
-        releaseTitle: this.$route.params.releaseTitle,
-        releaseBandcampEmbbed: this.$route.params.releaseBandcampEmbbed,
-        releaseNumber: this.$route.params.releaseNumber,
-        releaseBlurb: this.$route.params.releaseBlurb,
-        releaseProducer: this.$route.params.releaseProducer,
-        releaseMastering: this.$route.params.releaseMastering,
-        releaseArtwork: this.$route.params.releaseArtwork
-      }
-  }, */
   props: ['releaseDetails'],
   data() {
     return {
-      release: [],
+      release: []
     }
   },
   mounted() {
-    /* console.log(this.$route.params); */
     fetch('/releases.json')
       .then(res => res.json())
       .then(data => {
@@ -76,9 +62,9 @@ export default {
 
         if (fetchedRelease) {
           this.release = fetchedRelease;
-          console.log("Fetched Release:", fetchedRelease);
+          /* console.log("Fetched Release:", fetchedRelease); */
         } else {
-          console.log("No release found with ID:", id);
+          console.log("No release found with ID:", releaseId);
         }
       })
       .catch(err => console.log(err.message));

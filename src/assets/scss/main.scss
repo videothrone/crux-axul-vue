@@ -101,6 +101,15 @@ a:hover {
   font-style: italic;
 }
 
+a.link-inverted {
+  color: var(--black-color);
+  text-decoration: underline;
+
+  &:hover {
+    color: var(--black-color);
+  }
+}
+
 .iframe {
   margin: auto;
 

@@ -1,19 +1,7 @@
 <template>
   <ul class="content__releases">
     <li class="content__releases-card" v-for="release in content.releases" :key="release.id">
-      <RouterLink :to="{ name: 'ReleaseDetails', params: {
-          releaseDetails: release.id,
-          releaseLink: release.releaseLink,
-          releaseImg: release.releaseImg,
-          releaseArtist: release.releaseArtist,
-          releaseTitle: release.releaseTitle,
-          releaseBandcampEmbbed: release.releaseBandcampEmbbed,
-          releaseNumber: release.releaseNumber,
-          releaseBlurb: release.releaseBlurb,
-          releaseProducer: release.releaseProducer,
-          releaseMastering: release.releaseMastering,
-          releaseArtwork: release.releaseArtwork,
-        }}">
+      <RouterLink :to="{ name: 'ReleaseDetails', params: { releaseDetails: release.id } }">
         <img :src="`/assets/img/${release.releaseImg}`" />
         <div>{{ release.releaseArtist }} - {{ release.releaseTitle }}</div>
         <div class="content__releases-card-cat">→ {{ release.releaseNumber }}</div>
