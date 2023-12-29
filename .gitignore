@@ -3,6 +3,7 @@ secrets.json
 .env.local
 dest
 dest-fractal
+dist
 .DS_Store
 .DS_Store?
 ._*

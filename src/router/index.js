@@ -16,12 +16,12 @@ const router = createRouter({
     {
       path: '/releases',
       name: 'releases',
-      component: () => import('../views/releases/Releases.vue'),
+      component: () => import('../views/Releases/Releases.vue'),
     },
     {
       path: '/releases/:releaseDetails',
       name: 'ReleaseDetails',
-      component: () => import('../views/releases/ReleaseDetails.vue'),
+      component: () => import('../views/Releases/ReleaseDetails.vue'),
       props: true,
     },
     {
@@ -29,7 +29,7 @@ const router = createRouter({
       name: 'links',
       component: () => import('../views/Links.vue'),
     },
-    {
+     {
       path: '/:catchAll(.*)',
       name: '404',
       component: () => import('../views/404.vue'),

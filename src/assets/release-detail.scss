@@ -19,7 +19,7 @@
 .content__release-back-button {
   height: fit-content;
 
-  @include mq.mq($until: l) {
+  @include mq.mq($until: xl) {
     background-color: var(--black-color);
     padding-bottom: 2rem;
     width: 100%;
