@@ -66,6 +66,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
 <style lang="scss">
 @use 'sass-mq/mq';
+// Font sizes
+$font-size-large: 2.2rem;
+$font-size-default: 2rem;
+$font-size-small: 1.8rem;
 
 .header__menu {
   font-family: 'UnifrakturCook-Bold-Terrible', Helvetica, Arial, serif;

@@ -28,6 +28,10 @@ export default {
 
 <style lang="scss">
 @use 'sass-mq/mq';
+// Font sizes
+$font-size-large: 2.2rem;
+$font-size-default: 2rem;
+$font-size-small: 1.8rem;
 
 :root {
   --content-card-font-color: black;
@@ -77,11 +81,11 @@ export default {
 }
 
 .content__releases .content__releases-card-cat {
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   color: var(--content-card-font-color);
 
   @include mq.mq($from: l) {
-    font-size: 1.6rem;
+    font-size: $font-size-default;
   }
 }
 
