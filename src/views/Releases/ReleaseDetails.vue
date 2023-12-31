@@ -21,6 +21,10 @@
           :src="release.releaseBandcampEmbbed"
           seamless
           ><a :href="release.releaseLink">{{ release.releaseTitle }}</a></iframe>
+        <div class="content__release-info-format-date">
+          <p class="content__release-info-format"><b>Release format: </b><span v-html="release.releaseFormat"></span></p>
+          <p class="content__release-info-date"><b>Release date: </b>{{ release.releaseDate }}</p>
+        </div>
       </div>
       <div class="content__release-promotext">
         <div class="content__release-promotext-blurb">

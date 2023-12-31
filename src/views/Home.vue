@@ -19,7 +19,7 @@
       <div>
         <iframe style="border: 0; width: 100%; height: 42px;" src="https://bandcamp.com/EmbeddedPlayer/album=1693614862/size=small/bgcol=333333/linkcol=9a64ff/transparent=true/" seamless=""><a href="https://cruxaxul.bandcamp.com/album/crux-iv-odd-arches">Crux IV: Odd Arches by Fels</a></iframe>
       </div>
-      <div id="content__home-left-credits">
+      <div id="content__home-left-credits"><b>Release format:</b>
         Digital |
         <a
           href="https://cruxaxul.bandcamp.com/album/crux-iv-odd-arches"
@@ -27,7 +27,7 @@
           target="_blank"
           >Buy / Listen</a
         ><br />
-        <div class="release-date">Releasedate: 22/09/2023</div>
+        <div class="release-date"><b>Release date:</b> 22/09/2023</div>
       </div>
     </div>
     <div class="content__home-right">
@@ -42,7 +42,7 @@
       >
       <div class="content__home-right-section">
         <p><span class="stars">✺</span>
-        A self-described native in the nether realm of “broken beats and emo pads”, Swiss fellow 
+        A self-described native in the nether realm of “broken beats and emo pads”, Swiss fellow
         <a href="https://soundcloud.com/felsss" target="_blank" rel="noreferrer noopener">Fels</a>
         delivers the fourth entry into our Crux singles series, here with two excursions into more minimalist, but equally detailed bassweight tension.
         </p>
