@@ -17,11 +17,16 @@ export default {
       content: [],
     }
   },
-  mounted() {
-    fetch('/releases.json')
+  methods: {
+    fetchData() {
+      fetch('/releases.json')
       .then(res => res.json())
       .then(data => this.content = data)
       .catch(err => console.log(err.message))
+    }
+  },
+  mounted() {
+    this.fetchData();
   }
 };
 </script>

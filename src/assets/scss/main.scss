@@ -17,8 +17,10 @@ $breakpoints: (
 @use 'sass-mq/mq' with (
   $breakpoints: $breakpoints
 );
+@use '@/assets/scss/mixins';
 
 @forward '@/assets/release-detail';
+
 
 // Font sizes
 $font-size-large: 2.2rem;
@@ -158,7 +160,7 @@ a.link-inverted {
     gap: 4rem;
   }
 }
-.content__home .out-now {
+.content__home-out-now {
   -moz-transition: color 0.3s ease-out, background 0.3s ease-in;
   -ms-transition: color 0.3s ease-out, background 0.3s ease-in;
   -o-transition: color 0.3s ease-out, background 0.3s ease-in;
@@ -175,7 +177,7 @@ a.link-inverted {
     font-weight: normal;
   }
 }
-.content__home .out-now:hover {
+.content__home-out-now:hover {
   background-color: var(--sec-color);
   color: var(--black-color);
 }
@@ -187,7 +189,16 @@ a.link-inverted {
     width: 100%;
   }
 }
-.content__home-left-credits .release-date {
+.content__home-release-format {
+  .link-inverted {
+    color: var(--main-color);
+  }
+
+  .link-inverted:hover {
+    color: var(--sec-color);
+  }
+}
+.content__home-release-date {
   margin: 0.1rem 0 0 0;
 }
 .content__home-right {
@@ -197,6 +208,10 @@ a.link-inverted {
     margin-top: 2rem;
     padding: 0;
   }
+}
+
+.content__home-right-section-credits {
+  @include mixins.list-reset();
 }
 
 .hrr {

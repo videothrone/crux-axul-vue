@@ -120,11 +120,18 @@ hr.hrr--content__release {
   margin: 2rem 0;
 }
 
+.content__home-right-section {
+  .link-inverted {
+    color: var(--main-color);
+  }
+
+  .link-inverted:hover {
+    color: var(--sec-color);
+  }
+}
+
 .content__release-promotext-credits {
   ul {
-    list-style: none;
-    margin: 0;
-    padding-left: 0;
     @include mixins.list-reset();
   }
 }

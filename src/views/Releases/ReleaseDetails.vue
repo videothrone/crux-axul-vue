@@ -9,6 +9,7 @@
           class="content__release-info-link"
           ><img
             :src="`/assets/img/${release.releaseImg}`"
+            :alt="`Cover of ${release.releaseTitle} by ${release.releaseArtist}`"
             class="content__release-image"
           />
           <div class="content__release-info-text">{{ release.releaseTitle }}</div>
@@ -20,7 +21,7 @@
           style="border: 0; width: 100%; height: 42px"
           :src="release.releaseBandcampEmbbed"
           seamless
-          ><a :href="release.releaseLink">{{ release.releaseTitle }}</a></iframe>
+          ><a :href="release.releaseLink">{{ release.releaseTitle }} by {{ release.releaseArtist }}</a></iframe>
         <div class="content__release-info-format-date">
           <p class="content__release-info-format"><b>Release format: </b><span v-html="release.releaseFormat"></span></p>
           <p class="content__release-info-date"><b>Release date: </b>{{ release.releaseDate }}</p>
