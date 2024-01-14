@@ -167,6 +167,7 @@ a.link-inverted {
   -webkit-transition: color 0.3s ease-out, background 0.3s ease-in;
   background-color: var(--main-color);
   color: var(--black-color);
+  display: block;
   font-size: $font-size-default;
   font-weight: bold;
   padding: 0.5rem 1.5rem;

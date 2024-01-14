@@ -27,10 +27,11 @@
         :href="release.releaseLink"
         rel="noreferrer noopener"
         target="_blank"
+        class="content__home-right-section content__home-out-now"
       >
-        <div class="content__home-right-section content__home-out-now">
+        <span >
           OUT NOW →<br />{{ release.releaseArtist }} - {{ release.releaseTitle }}
-        </div></a
+        </span></a
       >
       <div class="content__home-right-section">
         <p v-html="release.releaseBlurb"></p>
