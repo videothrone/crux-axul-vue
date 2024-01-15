@@ -166,6 +166,7 @@ $font-size-small: 1.8rem;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  gap: 2rem 0;
   justify-content: flex-end;
   list-style: none;
   margin: 0;
@@ -186,7 +187,6 @@ $font-size-small: 1.8rem;
 
 .nav-list__item {
   display: block;
-  margin: 0 0 5rem 0;
   text-align: center;
 
   .router-link-active {
@@ -194,7 +194,7 @@ $font-size-small: 1.8rem;
     font-style: italic;
   }
 
-  @include mq.mq($from: 768px) {
+  @include mq.mq($from: l) {
     margin: 0.5rem 2rem;
   }
 }

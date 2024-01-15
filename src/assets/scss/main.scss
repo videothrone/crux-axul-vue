@@ -68,12 +68,6 @@ body {
   }
 }
 
-.header__menu ul li {
-  @include mq.mq($until: l) {
-    margin: 1rem 0;
-  }
-}
-
 .header__menu ul li a,
 .header__menu ul li a:link,
 .header__menu ul li a:visited,
