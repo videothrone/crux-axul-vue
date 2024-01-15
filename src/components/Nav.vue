@@ -166,7 +166,7 @@ $font-size-small: 1.8rem;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  gap: 2rem 0;
+  gap: 6rem 0;
   justify-content: flex-end;
   list-style: none;
   margin: 0;
