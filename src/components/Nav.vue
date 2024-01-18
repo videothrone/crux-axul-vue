@@ -1,25 +1,26 @@
 <template>
   <nav class="header__menu js-nav">
     <button
+      :class="{ active: isMenuOpen }"
       class="header__menu-button"
-      id="header__menu-button"
-      aria-expanded="false"
+      :aria-expanded="isAriaExpanded"
       aria-controls="header-menu"
+      @click="toggleNavMenu"
     >
       <div class="header__menu-button-bar"></div>
       <span class="header__menu-text">Navigation closed</span>
     </button>
-    <div class="nav-list-container">
-      <ul class="nav-list">
-        <li class="nav-list__item">
+    <div class="nav-list-container" :class="{ 'nav-list-container--open': isMenuOpen }">
+      <ul class="nav-list" :class="{ active: isMenuOpen }">
+        <li class="nav-list__item" @click="closeNavMenu">
           <RouterLink :to="{ name: 'releases' }" id="releases" target="_self"
             >Releases</RouterLink
           >
         </li>
-        <li class="nav-list__item">
+        <li class="nav-list__item" @click="closeNavMenu">
           <RouterLink to="/links" id="links" target="_self">Links</RouterLink>
         </li>
-        <li class="nav-list__item">
+        <li class="nav-list__item" @click="closeNavMenu">
           <a
             href="mailto:cruxaxulrec@gmail.com"
             rel="noreferrer noopener"
@@ -33,35 +34,30 @@
 </template>
 
 <script>
-document.addEventListener('DOMContentLoaded', () => {
-  if (document.querySelector('.header__menu-button')) {
-    const hamburger = document.querySelector('.header__menu-button');
-    const navMenuContainer = document.querySelector('.nav-list-container');
-    const navMenu = document.querySelector('.nav-list');
-    const navMenuItems = document.querySelectorAll('.nav-list__item');
-    const body = document.querySelector('body');
+export default {
+  data() {
+    return {
+      isMenuOpen: false,
+      isAriaExpanded: false
+    };
+  },
+  methods: {
+    toggleNavMenu() {
+      this.isMenuOpen = !this.isMenuOpen;
+      this.isAriaExpanded = !this.isAriaExpanded;
 
-    hamburger.addEventListener('click', () => {
-      hamburger.classList.toggle('active');
-      navMenuContainer.classList.toggle('nav-list-container--open');
-      navMenu.classList.toggle('active');
-      if (body.style.position === '') {
-        body.style.position = 'fixed';
+      if (document.body.style.position === '') {
+        document.body.style.position = 'fixed';
       } else {
-        body.style.position = '';
+        document.body.style.position = '';
       }
-    });
-
-    navMenuItems.forEach((item) => {
-      item.addEventListener('click', () => {
-        hamburger.classList.remove('active');
-        navMenuContainer.classList.remove('nav-list-container--open');
-        navMenu.classList.remove('active');
-        body.style.position = '';
-      });
-    });
+    },
+    closeNavMenu() {
+      this.isMenuOpen = false;
+      document.body.style.position = '';
+    }
   }
-});
+};
 </script>
 
 <style lang="scss">
@@ -139,7 +135,7 @@ $font-size-small: 1.8rem;
 }
 
 .nav-list-container {
-  @include mq.mq($until: 768px) {
+  @include mq.mq($until: l) {
     background-color: var(--black-color);
     bottom: 0;
     height: 100vh;
@@ -173,14 +169,18 @@ $font-size-small: 1.8rem;
   padding-left: 0;
   position: relative;
 
-  @media (max-width: 768px) {
+  @include mq.mq($until: l) {
     flex-direction: column;
     justify-content: start;
   }
+
+  @include mq.mq($from: l) {
+    gap: 0;
+  }
 }
 
-@media (max-width: 768px) {
-  .nav-list:not(.nav-list.active) {
+.nav-list:not(.nav-list.active) {
+  @include mq.mq($until: l) {
     display: none;
   }
 }
