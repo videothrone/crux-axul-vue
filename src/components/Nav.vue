@@ -4,11 +4,12 @@
       :class="{ active: isMenuOpen }"
       class="header__menu-button"
       :aria-expanded="isAriaExpanded"
-      aria-controls="header-menu"
+      aria-controls="header__menu"
       @click="toggleNavMenu"
     >
       <div class="header__menu-button-bar"></div>
-      <span class="header__menu-text">Navigation closed</span>
+      <span class="header__menu-text" v-if="isMenuOpen">Navigation open</span>
+      <span class="header__menu-text" v-else>Navigation closed</span>
     </button>
     <div class="nav-list-container" :class="{ 'nav-list-container--open': isMenuOpen }">
       <ul class="nav-list" :class="{ active: isMenuOpen }">
