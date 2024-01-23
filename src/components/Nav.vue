@@ -1,5 +1,5 @@
 <template>
-  <nav class="header__menu js-nav">
+  <nav class="header__menu" @keydown.esc="onKeydown">
     <button
       :class="{ active: isMenuOpen }"
       class="header__menu-button"
@@ -19,7 +19,7 @@
           >
         </li>
         <li class="nav-list__item" @click="closeNavMenu">
-          <RouterLink to="/links" id="links" target="_self">Links</RouterLink>
+          <RouterLink :to="{ name: 'links' }" id="links" target="_self">Links</RouterLink>
         </li>
         <li class="nav-list__item" @click="closeNavMenu">
           <a
@@ -56,6 +56,13 @@ export default {
     closeNavMenu() {
       this.isMenuOpen = false;
       document.body.style.position = '';
+    },
+    onKeydown(event) {
+    // Close overlay on ESC
+      if (event.keyCode === 27) {
+        event.preventDefault();
+        this.closeNavMenu();
+      }
     }
   }
 };
