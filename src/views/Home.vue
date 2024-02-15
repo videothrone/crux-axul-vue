@@ -68,11 +68,11 @@ export default {
         const JSONdata = data;
         const newestRelease = JSONdata.releases[JSONdata.releases.length - 1];
 
-      if (newestRelease) {
+        if (newestRelease) {
           this.release = newestRelease;
           /* console.log("Fetched Release:", newestRelease); */
         } else {
-          console.log("No JSON found!");
+          console.log(err.message, "No JSON found!");
         }
       })
       .catch(err => console.log(err.message));

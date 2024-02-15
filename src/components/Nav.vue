@@ -58,7 +58,7 @@ export default {
       document.body.style.position = '';
     },
     onKeydown(event) {
-    // Close overlay on ESC
+    // Close overlay on ESC (works only on focus for now)
       if (event.keyCode === 27) {
         event.preventDefault();
         this.closeNavMenu();
