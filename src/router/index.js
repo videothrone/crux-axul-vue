@@ -6,12 +6,7 @@ const router = createRouter({
     {
       path: '/',
       name: 'home',
-      component: () => import('../views/Home.vue'),
-    },
-    {
-      path: '/about',
-      name: 'about',
-      component: () => import('../views/About.vue'),
+      component: () => import('../views/home/Home.vue'),
     },
     {
       path: '/releases',
@@ -27,12 +22,12 @@ const router = createRouter({
     {
       path: '/links',
       name: 'links',
-      component: () => import('../views/Links.vue'),
+      component: () => import('../views/links/Links.vue'),
     },
      {
       path: '/:catchAll(.*)',
       name: '404',
-      component: () => import('../views/404.vue'),
+      component: () => import('../views/page-404/page-404.vue'),
     },
   ],
 });
