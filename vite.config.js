@@ -14,8 +14,11 @@ export default defineConfig({
   css: {
     preprocessorOptions: {
       scss: {
-        additionalData: `@use "@/assets/scss/main.scss";`,
+        additionalData: `@use "@/assets/scss/main.scss" as *;`,
       },
     },
+  },
+  optimizeDeps: {
+    exclude: ['oh-vue-icons/icons'],
   },
 });
