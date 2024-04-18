@@ -27,7 +27,7 @@ const router = createRouter({
      {
       path: '/:catchAll(.*)',
       name: '404',
-      component: () => import('../views/page-404/page-404.vue'),
+      component: () => import('../views/page-404/Page-404.vue'),
     },
   ],
 });
