@@ -61,32 +61,5 @@
 </template>
 
 <style lang="scss">
-@use 'sass-mq/mq';
-// Font sizes
-$font-size-large: 2.2rem;
-$font-size-default: 2rem;
-$font-size-small: 1.8rem;
-
-.content__links {
-  margin-top: 2rem;
-  width: 100%;
-
-  @include mq.mq($from: xl) {
-    margin-top: 0;
-  }
-}
-
-.content__links__link {
-  font-size: 2.2rem;
-
-  @include mq.mq($from: xl) {
-    font-size: $font-size-default;
-  }
-}
-
-hr.hrr__links {
-  border: none;
-  border-top: 0.2rem dashed var(--sec-color);
-  margin: 1rem 0;
-}
+@import './Links.scss';
 </style>
