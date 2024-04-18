@@ -77,6 +77,6 @@ export default {
 }
 </script>
 
-
-
-
+<style lang="scss">
+@import './ReleaseDetails.scss';
+</style>
