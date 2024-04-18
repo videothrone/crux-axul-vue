@@ -1,84 +1,11 @@
-<template>
-  <nav class="header__menu" @keydown.esc="onKeydown">
-    <button
-      :class="{ active: isMenuOpen }"
-      class="header__menu-button"
-      :aria-expanded="isAriaExpanded"
-      aria-controls="header__menu"
-      @click="toggleNavMenu"
-    >
-      <div class="header__menu-button-bar"></div>
-      <span class="header__menu-text" v-if="isMenuOpen">Navigation open</span>
-      <span class="header__menu-text" v-else>Navigation closed</span>
-    </button>
-    <div class="nav-list-container" :class="{ 'nav-list-container--open': isMenuOpen }">
-      <ul class="nav-list" :class="{ active: isMenuOpen }">
-        <li class="nav-list__item" @click="closeNavMenu">
-          <RouterLink :to="{ name: 'releases' }" id="releases" target="_self"
-            >Releases</RouterLink
-          >
-        </li>
-        <li class="nav-list__item" @click="closeNavMenu">
-          <RouterLink :to="{ name: 'links' }" id="links" target="_self">Links</RouterLink>
-        </li>
-        <li class="nav-list__item" @click="closeNavMenu">
-          <a
-            href="mailto:cruxaxulrec@gmail.com"
-            rel="noreferrer noopener"
-            target="_self"
-            >Contact</a
-          >
-        </li>
-      </ul>
-    </div>
-  </nav>
-</template>
-
-<script>
-export default {
-  data() {
-    return {
-      isMenuOpen: false,
-      isAriaExpanded: false
-    };
-  },
-  methods: {
-    toggleNavMenu() {
-      this.isMenuOpen = !this.isMenuOpen;
-      this.isAriaExpanded = !this.isAriaExpanded;
-
-      if (document.body.style.position === '') {
-        document.body.style.position = 'fixed';
-      } else {
-        document.body.style.position = '';
-      }
-    },
-    closeNavMenu() {
-      this.isMenuOpen = false;
-      document.body.style.position = '';
-    },
-    onKeydown(event) {
-    // Close overlay on ESC (works only on focus for now)
-      if (event.keyCode === 27) {
-        event.preventDefault();
-        this.closeNavMenu();
-      }
-    }
-  }
-};
-</script>
-
-<style lang="scss">
 @use 'sass-mq/mq';
-// Font sizes
-$font-size-large: 2.2rem;
-$font-size-default: 2rem;
-$font-size-small: 1.8rem;
+@use '@/assets/scss/mixins' as *;
 
 .header__menu {
   font-family: 'UnifrakturCook-Bold-Terrible', Helvetica, Arial, serif;
 
   @include mq.mq($until: l) {
+    display: flex;
     font-size: 3rem;
     margin-top: 0;
   }
@@ -91,6 +18,16 @@ $font-size-small: 1.8rem;
   // @media all and (max-width: 935px) {
   //   font-size: calc(1rem + 1vmin);
   // }
+}
+
+.header__menu ul li a,
+.header__menu ul li a:link,
+.header__menu ul li a:visited,
+.header__menu ul li a:active {
+  display: inline-block;
+  outline: none;
+  position: relative;
+  width: auto;
 }
 
 .header__menu-button {
@@ -167,14 +104,13 @@ $font-size-small: 1.8rem;
 }
 
 .nav-list {
+  @include list-reset();
+
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   gap: 6rem 0;
   justify-content: flex-end;
-  list-style: none;
-  margin: 0;
-  padding-left: 0;
   position: relative;
 
   @include mq.mq($until: l) {
@@ -216,4 +152,3 @@ $font-size-small: 1.8rem;
   padding-left: 0;
   position: relative;
 }
-</style>
