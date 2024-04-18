@@ -10,6 +10,12 @@ This Work in Progress is a rebuild of the original [Crux Axul](https://github.co
 - Mobile puts the nav into an overlay
 - More TBD
 
+## To-Do
+
+- Still some refactoring of views and CSS needed
+- Design needs and overhaul
+
+
 ## Deployment Status
 [![Netlify Status](https://api.netlify.com/api/v1/badges/734b604d-b987-4bfd-9b56-031fb0d7aea4/deploy-status)](https://app.netlify.com/sites/boisterous-stroopwafel-8da6ff/deploys)
 
