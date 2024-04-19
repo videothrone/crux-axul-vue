@@ -1,5 +1,6 @@
 <template>
-  <div class="content__releases-wrapper">
+  <Loader v-if="isLoading"/>
+  <div class="content__releases-wrapper" v-if="!isLoading">
     <button type="button" class="content__releases-sort-button" @click="changeReleasesOrder">Oldest ↓</button>
     <ul class="content__releases">
       <li class="content__releases-card" v-for="release in content.releases" :key="release.id">
@@ -14,20 +15,26 @@
 </template>
 
 <script>
+import Loader from '@/components/loader/Loader.vue';
+import { ref, onMounted } from 'vue';
+
 export default {
-  data() {
-    return {
-      content: []
-    }
+  components: {
+    Loader
   },
-  methods: {
-    fetchData() {
+  setup() {
+    const content = ref([]);
+    const isLoading = ref(true);
+
+    const fetchData = () => {
       fetch('/releases.json')
-      .then(res => res.json())
-      .then(data => this.content = data)
-      .catch(err => console.log(err.message))
-    },
-    changeReleasesOrder() {
+        .then(res => res.json())
+        .then(data => content.value = data)
+        .then(() => isLoading.value = false)
+        .catch(err => console.log(err.message));
+    };
+
+    const changeReleasesOrder = () => {
       const cardsList = document.querySelectorAll('.content__releases-card');
       const reversedCards = Array.from(cardsList).reverse();
       const contentReleases = document.querySelector('.content__releases');
@@ -44,10 +51,17 @@ export default {
         const buttonText = sortButton.textContent;
         sortButton.textContent = buttonText === 'Oldest ↓' ? 'Newest ↑' : 'Oldest ↓';
       }
-    }
-  },
-  mounted() {
-    this.fetchData();
+    };
+
+    onMounted(() => {
+      fetchData();
+    });
+
+    return {
+      content,
+      changeReleasesOrder,
+      isLoading
+    };
   }
 };
 </script>

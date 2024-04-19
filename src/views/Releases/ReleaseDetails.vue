@@ -1,5 +1,6 @@
 <template>
-  <div class="content__release">
+  <Loader v-if="isLoading"/>
+  <div class="content__release" v-if="!isLoading">
     <RouterLink :to="{ name: 'releases' }" class="content__release-back-button">← All releases</RouterLink>
       <div class="content__release-info">
         <a
@@ -50,29 +51,46 @@
 </template>
 
 <script>
+import Loader from '@/components/loader/Loader.vue';
+import { ref, onMounted, onUnmounted, watch } from 'vue';
+
 export default {
   props: ['releaseDetails'],
-  data() {
-    return {
-      release: []
-    }
-  },
-  mounted() {
-    fetch('/releases.json')
-      .then(res => res.json())
-      .then(data => {
-        const JSONdata = data;
-        const releaseId = this.$props.releaseDetails;
-        const fetchedRelease = JSONdata.releases.find(release => release.id === releaseId);
+  setup(props) {
+    const release = ref([]);
+    const isLoading = ref(true);
 
-        if (fetchedRelease) {
-          this.release = fetchedRelease;
-          /* console.log("Fetched Release:", fetchedRelease); */
-        } else {
-          console.log("No release found with ID:", releaseId);
-        }
-      })
-      .catch(err => console.log(err.message));
+    const fetchData = () => {
+      fetch('/releases.json')
+        .then(res => res.json())
+        .then(data => {
+          const { releases } = data;
+          const releaseId = props.releaseDetails;
+          const fetchedRelease = releases.find(release => release.id === releaseId);
+
+          if (fetchedRelease) {
+            release.value = fetchedRelease;
+          } else {
+            console.log("No release found with ID:", releaseId);
+          }
+        })
+        .then(() => isLoading.value = false)
+        .catch(err => console.log(err.message));
+    };
+
+    onMounted(() => {
+      fetchData();
+    });
+
+    // Optional: Implement watch on props.releaseDetails for re-fetching data when props change
+    watch(() => props.releaseDetails, () => {
+      fetchData();
+    });
+
+    return {
+      release,
+      isLoading
+    };
   }
 }
 </script>
