@@ -14,6 +14,7 @@ This Work in Progress is a rebuild of the original [Crux Axul](https://github.co
 
 - Still some refactoring of views and CSS needed
 - Design needs and overhaul
+- Add "filter by artist" on Release view
 
 
 ## Deployment Status
