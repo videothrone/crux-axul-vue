@@ -52,7 +52,8 @@
 
 <script>
 import Loader from '@/components/loader/Loader.vue';
-import { ref, onMounted, onUnmounted, watch } from 'vue';
+import { fetchData } from '@/helpers/helperFunctions.js';
+import { ref, onMounted } from 'vue';
 
 export default {
   props: ['releaseDetails'],
@@ -60,9 +61,8 @@ export default {
     const release = ref([]);
     const isLoading = ref(true);
 
-    const fetchData = () => {
-      fetch('/releases.json')
-        .then(res => res.json())
+    onMounted(() => {
+      fetchData('/releases.json')
         .then(data => {
           const { releases } = data;
           const releaseId = props.releaseDetails;
@@ -72,19 +72,12 @@ export default {
             release.value = fetchedRelease;
           } else {
             console.log("No release found with ID:", releaseId);
+            return;
           }
+
+          isLoading.value = false;
         })
-        .then(() => isLoading.value = false)
         .catch(err => console.log(err.message));
-    };
-
-    onMounted(() => {
-      fetchData();
-    });
-
-    // Optional: Implement watch on props.releaseDetails for re-fetching data when props change
-    watch(() => props.releaseDetails, () => {
-      fetchData();
     });
 
     return {

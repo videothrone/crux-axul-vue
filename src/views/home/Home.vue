@@ -71,6 +71,7 @@
 
 <script>
 import Loader from '@/components/loader/Loader.vue';
+import { fetchData } from '@/helpers/helperFunctions.js';
 import { ref, onMounted } from 'vue';
 
 export default {
@@ -82,8 +83,7 @@ export default {
     const isLoading = ref(true);
 
     onMounted(() => {
-      fetch('/releases.json')
-        .then(res => res.json())
+      fetchData('/releases.json')
         .then(data => {
           const { releases } = data;
           const newestRelease = releases[releases.length - 1];
@@ -92,9 +92,11 @@ export default {
             release.value = newestRelease;
           } else {
             console.log(err.message, "No JSON found!");
+            return
           }
+
+          isLoading.value = false
         })
-        .then(() => isLoading.value = false)
         .catch(err => console.log(err.message));
     });
 

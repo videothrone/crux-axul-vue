@@ -16,6 +16,7 @@
 
 <script>
 import Loader from '@/components/loader/Loader.vue';
+import { fetchData } from '@/helpers/helperFunctions.js';
 import { ref, onMounted } from 'vue';
 
 export default {
@@ -25,14 +26,6 @@ export default {
   setup() {
     const content = ref([]);
     const isLoading = ref(true);
-
-    const fetchData = () => {
-      fetch('/releases.json')
-        .then(res => res.json())
-        .then(data => content.value = data)
-        .then(() => isLoading.value = false)
-        .catch(err => console.log(err.message));
-    };
 
     const changeReleasesOrder = () => {
       const cardsList = document.querySelectorAll('.content__releases-card');
@@ -54,7 +47,12 @@ export default {
     };
 
     onMounted(() => {
-      fetchData();
+      fetchData('/releases.json')
+        .then(data => {
+          content.value = data;
+          isLoading.value = false;
+        })
+        .catch(err => console.log(err.message));
     });
 
     return {
