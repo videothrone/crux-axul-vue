@@ -13,7 +13,7 @@ This Work in Progress is a rebuild of the original [Crux Axul](https://github.co
 
 - Home template pulls data from newest JSON entry / release
 - Releases and Releases detail templates pull data from JSON in general
-- Releases page can be filtered ascending / descending releases
+- Releases page can be filtered by ascending / descending releases
 - Mobile puts the nav into an classic overlay /w hamburger
 
 ## To-Do
