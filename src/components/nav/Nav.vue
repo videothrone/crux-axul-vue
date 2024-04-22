@@ -12,16 +12,16 @@
       <span class="header__menu-text" v-else>Navigation closed</span>
     </button>
     <div class="nav-list-container" :class="{ 'nav-list-container--open': isMenuOpen }">
-      <ul class="nav-list" :class="{ active: isMenuOpen }">
-        <li class="nav-list__item" @click="closeNavMenu">
+      <ul class="nav-list" role="list" :class="{ active: isMenuOpen }">
+        <li class="nav-list__item" role="listitem" @click="closeNavMenu">
           <RouterLink :to="{ name: 'releases' }" id="releases" target="_self"
             >Releases</RouterLink
           >
         </li>
-        <li class="nav-list__item" @click="closeNavMenu">
+        <li class="nav-list__item" role="listitem" @click="closeNavMenu">
           <RouterLink :to="{ name: 'links' }" id="links" target="_self">Links</RouterLink>
         </li>
-        <li class="nav-list__item" @click="closeNavMenu">
+        <li class="nav-list__item" role="listitem" @click="closeNavMenu">
           <a
             href="mailto:cruxaxulrec@gmail.com"
             rel="noreferrer noopener"

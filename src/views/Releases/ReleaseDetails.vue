@@ -70,12 +70,11 @@ export default {
 
           if (fetchedRelease) {
             release.value = fetchedRelease;
+            isLoading.value = false;
           } else {
             console.log("No release found with ID:", releaseId);
             return;
           }
-
-          isLoading.value = false;
         })
         .catch(err => console.log(err.message));
     });

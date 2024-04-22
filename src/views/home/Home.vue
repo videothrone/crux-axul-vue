@@ -90,12 +90,11 @@ export default {
 
           if (newestRelease) {
             release.value = newestRelease;
+            isLoading.value = false
           } else {
             console.log(err.message, "No JSON found!");
-            return
+            return;
           }
-
-          isLoading.value = false
         })
         .catch(err => console.log(err.message));
     });

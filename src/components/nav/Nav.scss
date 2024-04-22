@@ -14,10 +14,6 @@
     font-size: calc(1rem + 2vmin);
     margin-top: 2.5rem;
   }
-
-  // @media all and (max-width: 935px) {
-  //   font-size: calc(1rem + 1vmin);
-  // }
 }
 
 .header__menu ul li a,
@@ -39,7 +35,7 @@
   margin: -0.5rem -0.5rem 0 0;
   width: 5rem;
 
-  @include mq.mq($from: l) {
+  @include mq.mq($from: xl) {
     display: none;
   }
 }
@@ -80,7 +76,9 @@
 }
 
 .nav-list-container {
-  @include mq.mq($until: l) {
+  border-bottom: 0.3rem dashed var(--main-color);
+
+  @include mq.mq($until: xl) {
     background-color: var(--black-color);
     bottom: 0;
     height: 100vh;
@@ -109,22 +107,23 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  gap: 6rem 0;
+  gap: 4rem 0;
   justify-content: flex-end;
   position: relative;
 
-  @include mq.mq($until: l) {
+  @include mq.mq($until: xl) {
     flex-direction: column;
     justify-content: start;
+    margin-top: 2rem;
   }
 
-  @include mq.mq($from: l) {
+  @include mq.mq($from: xl) {
     gap: 0;
   }
 }
 
 .nav-list:not(.nav-list.active) {
-  @include mq.mq($until: l) {
+  @include mq.mq($until: xl) {
     display: none;
   }
 }
@@ -138,7 +137,7 @@
     font-style: italic;
   }
 
-  @include mq.mq($from: l) {
+  @include mq.mq($from: xl) {
     margin: 0.5rem 2rem;
   }
 }
