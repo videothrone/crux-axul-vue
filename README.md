@@ -5,7 +5,7 @@ This Work in Progress is a rebuild of the original [Crux Axul](https://github.co
 ## Tech
 
 -  Built with Vue 3 / Vite
--  Data is fetched from a central JSON file
+-  Data is fetched from multiple JSON files
 -  Media queries handled /w [SASS-mq](https://www.npmjs.com/package/sass-mq)
 -  Icons are pulled from [Oh, Vue Icons!](https://oh-vue-icons.js.org/)
 
