@@ -30,7 +30,8 @@ export default {
     });
 
     return {
-      links
+      links,
+      isLoading
     };
   }
 };
