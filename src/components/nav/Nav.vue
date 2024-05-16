@@ -6,6 +6,7 @@
       :aria-expanded="isAriaExpanded"
       aria-controls="header__menu"
       @click="toggleNavMenu"
+      type="button"
     >
       <div class="header__menu-button-bar"></div>
       <span class="header__menu-text" v-if="isMenuOpen">Navigation open</span>
@@ -35,35 +36,45 @@
 </template>
 
 <script>
-export default {
-  data() {
-    return {
-      isMenuOpen: false,
-      isAriaExpanded: false
-    };
-  },
-  methods: {
-    toggleNavMenu() {
-      this.isMenuOpen = !this.isMenuOpen;
-      this.isAriaExpanded = !this.isAriaExpanded;
+import { ref } from 'vue';
 
+export default {
+  setup() {
+    const isMenuOpen = ref(false);
+    const isAriaExpanded = ref(false);
+
+    const toggleNavMenu = () => {
+      isMenuOpen.value = !isMenuOpen.value;
+      isAriaExpanded.value = !isAriaExpanded.value;
+
+      // Prevent scrolling when menu is open
       if (document.body.style.position === '') {
         document.body.style.position = 'fixed';
       } else {
         document.body.style.position = '';
       }
-    },
-    closeNavMenu() {
-      this.isMenuOpen = false;
+    };
+
+    const closeNavMenu = () => {
+      isMenuOpen.value = false;
       document.body.style.position = '';
-    },
-    onKeydown(event) {
-    // Close overlay on ESC (works only on focus for now)
+    };
+
+    const onKeydown = (event) => {
+      // Close overlay on ESC (works only on focus for now)
       if (event.keyCode === 27) {
         event.preventDefault();
-        this.closeNavMenu();
+        closeNavMenu();
       }
-    }
+    };
+
+    return {
+      isMenuOpen,
+      isAriaExpanded,
+      toggleNavMenu,
+      closeNavMenu,
+      onKeydown
+    };
   }
 };
 </script>
