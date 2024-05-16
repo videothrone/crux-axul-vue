@@ -25,12 +25,15 @@
           </a>
         </iframe>
       </div>
-      <div id="content__home-left-credits">
+      <div id="content__home-left-details">
         <div class="content__home-release-format">
           <b>Release format: </b><span v-html="release.releaseFormat"></span>
         </div>
         <div class="content__home-release-date">
           <b>Release date: </b>{{ release.releaseDate }}
+        </div>
+        <div class="content__home-release-link">
+          <a :href="release.releaseLink" rel="noreferrer noopener" target="_blank">Buy / Listen</a>
         </div>
       </div>
     </div>
@@ -90,7 +93,7 @@ export default {
 
           if (newestRelease) {
             release.value = newestRelease;
-            isLoading.value = false
+            isLoading.value = false;
           } else {
             console.log(err.message, "No JSON found!");
             return;
