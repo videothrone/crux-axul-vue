@@ -25,7 +25,7 @@
           ><a :href="release.releaseLink">{{ release.releaseTitle }} by {{ release.releaseArtist }}</a></iframe>
         <div class="content__release-info-details">
           <p class="content__release-info-format">
-            <b>Release format: </b><span v-html="release.releaseFormat"></span>
+            <b>Release format: </b>{{ release.releaseFormat }}
           </p>
           <p class="content__release-info-date">
             <b>Release date: </b>{{ release.releaseDate }}

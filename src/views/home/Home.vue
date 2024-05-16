@@ -27,7 +27,7 @@
       </div>
       <div id="content__home-left-details">
         <div class="content__home-release-format">
-          <b>Release format: </b><span v-html="release.releaseFormat"></span>
+          <b>Release format: </b>{{ release.releaseFormat }}
         </div>
         <div class="content__home-release-date">
           <b>Release date: </b>{{ release.releaseDate }}
