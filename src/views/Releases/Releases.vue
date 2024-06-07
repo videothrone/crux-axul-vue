@@ -14,54 +14,42 @@
   </div>
 </template>
 
-<script>
+<script setup>
 import Loader from '@/components/loader/Loader.vue';
 import { fetchData } from '@/helpers/helperFunctions.js';
 import { ref, onMounted } from 'vue';
 
-export default {
-  components: {
-    Loader
-  },
-  setup() {
-    const content = ref([]);
-    const isLoading = ref(true);
+const content = ref([]);
+const isLoading = ref(true);
 
-    const changeReleasesOrder = () => {
-      const cardsList = document.querySelectorAll('.content__releases-card');
-      const reversedCards = Array.from(cardsList).reverse();
-      const contentReleases = document.querySelector('.content__releases');
-      const sortButton = document.querySelector('.content__releases-sort-button');
+onMounted(() => {
+  fetchData('/releases.json')
+    .then(data => {
+      content.value = data;
+      isLoading.value = false;
+    })
+    .catch(err => console.log(err.message));
+});
 
-      if (contentReleases) {
-        contentReleases.innerHTML = '';
-        reversedCards.forEach(card => {
-          contentReleases.appendChild(card);
-        });
-      }
+const changeReleasesOrder = () => {
+  const cardsList = document.querySelectorAll('.content__releases-card');
+  const reversedCards = Array.from(cardsList).reverse();
+  const contentReleases = document.querySelector('.content__releases');
+  const sortButton = document.querySelector('.content__releases-sort-button');
 
-      if (sortButton) {
-        const buttonText = sortButton.textContent;
-        sortButton.textContent = buttonText === 'Oldest ↓' ? 'Newest ↑' : 'Oldest ↓';
-      }
-    };
-
-    onMounted(() => {
-      fetchData('/releases.json')
-        .then(data => {
-          content.value = data;
-          isLoading.value = false;
-        })
-        .catch(err => console.log(err.message));
+  if (contentReleases) {
+    contentReleases.innerHTML = '';
+    reversedCards.forEach(card => {
+      contentReleases.appendChild(card);
     });
+  }
 
-    return {
-      content,
-      changeReleasesOrder,
-      isLoading
-    };
+  if (sortButton) {
+    const buttonText = sortButton.textContent;
+    sortButton.textContent = buttonText === 'Oldest ↓' ? 'Newest ↑' : 'Oldest ↓';
   }
 };
+
 </script>
 
 <style lang="scss">

@@ -35,46 +35,33 @@
   </nav>
 </template>
 
-<script>
+<script setup>
 import { ref } from 'vue';
+const isMenuOpen = ref(false);
+const isAriaExpanded = ref(false);
 
-export default {
-  setup() {
-    const isMenuOpen = ref(false);
-    const isAriaExpanded = ref(false);
+const toggleNavMenu = () => {
+  isMenuOpen.value = !isMenuOpen.value;
+  isAriaExpanded.value = !isAriaExpanded.value;
 
-    const toggleNavMenu = () => {
-      isMenuOpen.value = !isMenuOpen.value;
-      isAriaExpanded.value = !isAriaExpanded.value;
+  // Prevent scrolling when menu is open
+  if (document.body.style.position === '') {
+    document.body.style.position = 'fixed';
+  } else {
+    document.body.style.position = '';
+  }
+};
 
-      // Prevent scrolling when menu is open
-      if (document.body.style.position === '') {
-        document.body.style.position = 'fixed';
-      } else {
-        document.body.style.position = '';
-      }
-    };
+const closeNavMenu = () => {
+  isMenuOpen.value = false;
+  document.body.style.position = '';
+};
 
-    const closeNavMenu = () => {
-      isMenuOpen.value = false;
-      document.body.style.position = '';
-    };
-
-    const onKeydown = (event) => {
-      // Close overlay on ESC (works only on focus for now)
-      if (event.keyCode === 27) {
-        event.preventDefault();
-        closeNavMenu();
-      }
-    };
-
-    return {
-      isMenuOpen,
-      isAriaExpanded,
-      toggleNavMenu,
-      closeNavMenu,
-      onKeydown
-    };
+const onKeydown = (event) => {
+  // Close overlay on ESC (works only on focus for now)
+  if (event.keyCode === 27) {
+    event.preventDefault();
+    closeNavMenu();
   }
 };
 </script>

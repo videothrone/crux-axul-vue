@@ -72,42 +72,30 @@
   </div>
 </template>
 
-<script>
+<script setup>
 import Loader from '@/components/loader/Loader.vue';
 import { fetchData } from '@/helpers/helperFunctions.js';
 import { ref, onMounted } from 'vue';
 
-export default {
-  components: {
-    Loader
-  },
-  setup() {
-    const release = ref([]);
-    const isLoading = ref(true);
+const release = ref([]);
+const isLoading = ref(true);
 
-    onMounted(() => {
-      fetchData('/releases.json')
-        .then(data => {
-          const { releases } = data;
-          const newestRelease = releases[releases.length - 1];
+onMounted(() => {
+  fetchData('/releases.json')
+    .then(data => {
+      const { releases } = data;
+      const newestRelease = releases[releases.length - 1];
 
-          if (newestRelease) {
-            release.value = newestRelease;
-            isLoading.value = false;
-          } else {
-            console.log(err.message, "No JSON found!");
-            return;
-          }
-        })
-        .catch(err => console.log(err.message));
-    });
-
-    return {
-      release,
-      isLoading
-    };
-  }
-}
+      if (newestRelease) {
+        release.value = newestRelease;
+        isLoading.value = false;
+      } else {
+        console.log(err.message, "No JSON found!");
+        return;
+      }
+    })
+    .catch(err => console.log(err.message));
+});
 </script>
 
 <style lang="scss">

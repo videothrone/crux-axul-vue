@@ -7,34 +7,22 @@
   </ul>
 </template>
 
-<script>
+<script setup>
 import Loader from '@/components/loader/Loader.vue';
 import { fetchData } from '@/helpers/helperFunctions.js';
 import { ref, onMounted } from 'vue';
 
-export default {
-  components: {
-    Loader
-  },
-  setup() {
-    const links = ref([]);
-    const isLoading = ref(true);
+const links = ref([]);
+const isLoading = ref(true);
 
-    onMounted(() => {
-      fetchData('/links.json')
-        .then(data => {
-          links.value = data;
-          isLoading.value = false;
-        })
-        .catch(err => console.log(err.message));
-    });
-
-    return {
-      links,
-      isLoading
-    };
-  }
-};
+onMounted(() => {
+  fetchData('/links.json')
+    .then(data => {
+      links.value = data;
+      isLoading.value = false;
+    })
+    .catch(err => console.log(err.message));
+});
 </script>
 
 <style lang="scss">

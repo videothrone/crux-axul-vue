@@ -57,41 +57,34 @@
   </div>
 </template>
 
-<script>
+<script setup>
 import Loader from '@/components/loader/Loader.vue';
 import { fetchData } from '@/helpers/helperFunctions.js';
 import { ref, onMounted } from 'vue';
 
-export default {
-  props: ['releaseDetails'],
-  setup(props) {
-    const release = ref([]);
-    const isLoading = ref(true);
+const props = defineProps({
+  releaseDetails: String
+});
+const release = ref([]);
+const isLoading = ref(true);
 
-    onMounted(() => {
-      fetchData('/releases.json')
-        .then(data => {
-          const { releases } = data;
-          const releaseId = props.releaseDetails;
-          const fetchedRelease = releases.find(release => release.id === releaseId);
+onMounted(() => {
+  fetchData('/releases.json')
+    .then(data => {
+      const { releases } = data;
+      const releaseId = props.releaseDetails;
+      const fetchedRelease = releases.find(release => release.id === releaseId);
 
-          if (fetchedRelease) {
-            release.value = fetchedRelease;
-            isLoading.value = false;
-          } else {
-            console.log("No release found with ID:", releaseId);
-            return;
-          }
-        })
-        .catch(err => console.log(err.message));
-    });
-
-    return {
-      release,
-      isLoading
-    };
-  }
-}
+      if (fetchedRelease) {
+        release.value = fetchedRelease;
+        isLoading.value = false;
+      } else {
+        console.log("No release found with ID:", releaseId);
+        return;
+      }
+    })
+    .catch(err => console.log(err.message));
+});
 </script>
 
 <style lang="scss">
