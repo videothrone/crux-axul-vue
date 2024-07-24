@@ -22,4 +22,9 @@
       margin-bottom: 1.5rem;
     }
   }
+
+  a.link--inverted:hover,
+  a.link--inverted:focus {
+    color: var(--sec-color);
+  }
 }
