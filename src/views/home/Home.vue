@@ -65,7 +65,7 @@
         <ul class="content__home-right-section-credits">
           <li v-if="release.releaseProducer">Produced by {{ release.releaseProducer }}</li>
           <li>Mastered by <span v-html="release.releaseMastering"></span></li>
-          <li>{{ release.releaseArtwork }}</li>
+          <li v-html="release.releaseArtwork"></li>
         </ul>
       </div>
     </div>
