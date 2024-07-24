@@ -394,6 +394,79 @@
       "releaseProducer": "Circular Square",
       "releaseMastering": "<a href='https://www.holysimilaun.com/' target='_blank' rel='noreferrer noopener' class='link--inverted'>Alberto Bertelli</a>",
       "releaseArtwork": "Artwork by Ferenc Petöcz"
+    },
+    {
+      "id": "canopy-drift",
+      "releaseLink": "https://cruxaxul.bandcamp.com/album/canopy-drift",
+      "releaseImg": "CXA011_thumb.jpg",
+      "releaseArtist": "Sankt",
+      "releaseTitle": "Canopy Drift",
+      "releaseBandcampEmbbed":
+        "https://bandcamp.com/EmbeddedPlayer/album=3125493530/size=small/bgcol=333333/linkcol=9a64ff/transparent=true/",
+      "releaseNumber": "CXA011",
+      "releaseDate": "16/08/2024",
+      "releaseFormat": "Digital",
+      "releaseBlurb": "<p>✺ <a href='https://www.floriansankt.com' target='_blank' rel='noreferrer noopener' class='link--inverted'>Sankt's</a> first full-length album Canopy Drift hones in on previous genre experimentations and offers multiple compelling configurations of ambient, fuzzed-out breaks, IDM and warped electro.</p><p>Washes of birdsong, bleeps and hyaline drones interweave on Eosphoros, the album's opener, laying the ground for the serpentine Underglow, on which a creeping hum of a rhythm is bolstered by snarling bass jolts.<br/>Wryl is where the album really takes up speed, its forward momentum adorned by fractured voice snippets and scuttling high-hats. The tempo is then upped again by Xerosere with its fuzzed-out pads and meticulous breakbeats, before the melancholic Floaters throws a bit of a curveball with crunchy and blown-out 90s electro, broken up by playful glitches and drop-outs.<br/>On Parhelion, a concise exercise in elegiac splendor, bell-like plucks float through the spectrum as the record finds a brief resting place. In contrast, the dubby title track morphs wet sounds and pulsating textures to erratic ends, just as Pfund Dub reframes UK Garage-y shuffles in a minimalist, yet blown-out fashion. <br/>Filtered pads usher in Creeping Nightshade, in which levee-breaking drums relentlessly waltz onward in the company of heavily deconstructed whispers, industrial-sounding squelches and bass salvos.<br/>Time-stretched and curling amen breaks return on the penultimate Peripheral Visions, which is interjected with hazy and sometimes somber organ chords. Noctilucent, the last of the three interconnected ambient pieces structuring Canopy Drift, closes the record out with recoiled piano reductions, as reverb tails droop off into the distance.   ✺</p>",
+      "releaseTracklist": [
+        {
+          "number": "1",
+          "title": "Eosphoros",
+          "runtime": "03:15"
+        },
+        {
+          "number": "2",
+          "title": "Underglow",
+          "runtime": "03:34"
+        },
+        {
+          "number": "3",
+          "title": "Wryl",
+          "runtime": "03:42"
+        },
+        {
+          "number": "4",
+          "title": "Xerosere",
+          "runtime": "04:07"
+        },
+        {
+          "number": "5",
+          "title": "Floaters",
+          "runtime": "05:22"
+        },
+        {
+          "number": "6",
+          "title": "Parhelion",
+          "runtime": "02:37"
+        },
+        {
+          "number": "7",
+          "title": "Canopy Drift",
+          "runtime": " 05:42 "
+        },
+        {
+          "number": "8",
+          "title": "Pfund Dub",
+          "runtime": "03:35"
+        },
+        {
+          "number": "9",
+          "title": "Creeping Nightshade ",
+          "runtime": "03:23"
+        },
+        {
+          "number": "10",
+          "title": "Peripheral Visions",
+          "runtime": "04:02"
+        },
+        {
+          "number": "11",
+          "title": "Noctilucent",
+          "runtime": "02:21"
+        }
+      ],
+      "releaseProducer": "Florian Sankt",
+      "releaseMastering": "<a href='https://www.holysimilaun.com/' target='_blank' rel='noreferrer noopener' class='link--inverted'>Alberto Bertelli</a>",
+      "releaseArtwork": "Artwork by Ferenc Petöcz<br/>Photograph by David Tip"
     }
   ]
 }
