@@ -14,5 +14,5 @@ import Nav from '@/components/nav/Nav.vue';
     </RouterLink>
     <Nav />
   </header>
-  <div class="content"><RouterView /></div>
+  <main class="content"><RouterView /></main>
 </template>
