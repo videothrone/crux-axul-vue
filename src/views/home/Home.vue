@@ -56,9 +56,9 @@
       </div>
       <hr class="hrr" />
       <div class="content__home-right-section">
-        <div v-for="tracklist in release.releaseTracklist">
-          {{ tracklist.number }}. {{ tracklist.title }} {{ tracklist.runtime }}
-        </div>
+        <ul class="content__home-right-section-list">
+          <li class="content__home-right-section-list-item" v-for="tracklist in release.releaseTracklist">{{ tracklist.number }}. {{ tracklist.title }} {{ tracklist.runtime }}</li>
+        </ul>
       </div>
       <hr class="hrr" />
       <div class="content__home-right-section">
