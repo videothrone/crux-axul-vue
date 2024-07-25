@@ -40,6 +40,11 @@ body {
   @include mq.mq($until: l) {
     height: 100%;
   }
+
+  @include mq.mq($from: xl) {
+    margin: 0 auto;
+    width: var(--global-max-width);
+  }
 }
 
 .header__content {
@@ -62,7 +67,7 @@ body {
     padding-bottom: 2rem;
   }
 
-  @include mq.mq($from: navigation) {
+  @include mq.mq($from: xxl) {
     padding-left: 2.5rem;
   }
 }
