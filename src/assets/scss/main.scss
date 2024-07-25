@@ -41,7 +41,7 @@ body {
     height: 100%;
   }
 
-  @include mq.mq($from: xl) {
+  @include mq.mq($from: xxl) {
     margin: 0 auto;
     width: var(--global-max-width);
   }
@@ -67,7 +67,7 @@ body {
     padding-bottom: 2rem;
   }
 
-  @include mq.mq($from: xxl) {
+  @include mq.mq($from: navigation) {
     padding-left: 2.5rem;
   }
 }
@@ -136,7 +136,7 @@ a.link--inverted {
     font-size: var(--font-size-small);
   }
 
-  @include mq.mq($from: navigation) {
+  @include mq.mq($from: xxl) {
     margin: 0 2rem 2rem 35rem;
   }
 }
