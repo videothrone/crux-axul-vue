@@ -1,6 +1,6 @@
 # Crux Axul
 
-This Work in Progress is a rebuild of the original [Crux Axul](https://github.com/videothrone/crux-axul) site with Vue 3 in Vite. The goal is / was to create proper dynamic and linkable subpages and an easier way to build the release catalog, w/ the option to connect the whole app to a headless CMS down the line if necessary. I also wanted to re-factor the markup to [BEM](https://getbem.com/) principles and at least implement basic web accessibility.
+This project is a rebuild of the original [Crux Axul](https://github.com/videothrone/crux-axul) site with Vue 3 in Vite. The goal is / was to create proper dynamic and linkable subpages and an easier way to build the release catalog, w/ the option to connect the whole app to a headless CMS down the line if necessary. I also wanted to re-factor the markup to [BEM](https://getbem.com/) principles and at least implement basic web accessibility. You can view change in versions in the <a href="CHANGELOG.md">Changelog</a>.
 
 ## Tech
 
@@ -19,7 +19,7 @@ This Work in Progress is a rebuild of the original [Crux Axul](https://github.co
 ## To-Do
 
 - Still some refactoring of views and CSS needed
-- Design needs an overhaul
+- Design could be nicer
 - Add "filter by artist" on Release view
 
 ## Deployment Status
