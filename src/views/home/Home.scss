@@ -21,19 +21,40 @@
   color: var(--black-color);
   display: block;
   font-size: var(--font-size-default);
-  font-weight: bold;
   padding: 0.5rem 1.5rem;
+  position: relative;
   transition: color 0.3s ease-out, background 0.3s ease-in;
+
+  &::before {
+    content: "✺";
+    color: var(--sec-color);
+    font-size: 6rem;
+    position: absolute;
+    right: 0;
+    top: -4.4rem;
+
+    @include mq.mq($from: xl) {
+      font-size: 10rem;
+      top: -7.4rem;
+    }
+  }
 
   @include mq.mq($from: m) {
     font-size: 3rem;
-    font-weight: normal;
   }
+
 }
 
-.content__home-out-now:hover {
-  background-color: var(--sec-color);
-  color: var(--black-color);
+a.content__home-out-now {
+  &:hover {
+    background-color: var(--sec-color);
+    color: var(--black-color);
+
+    &:before {
+      color: var(--main-color);
+      font-style: normal;
+    }
+  }
 }
 
 .content__home-out-now-text {
