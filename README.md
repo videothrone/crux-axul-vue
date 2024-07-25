@@ -23,7 +23,7 @@ This project is a rebuild of the original [Crux Axul](https://github.com/videoth
 - Add "filter by artist" on Release view
 
 ## Deployment Status
-[![Netlify Status](https://api.netlify.com/api/v1/badges/734b604d-b987-4bfd-9b56-031fb0d7aea4/deploy-status)](https://app.netlify.com/sites/boisterous-stroopwafel-8da6ff/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/7a9099ab-7405-4a4b-9158-9fd381b5df26/deploy-status)](https://app.netlify.com/sites/admiring-einstein-59e50c/deploys)
 
 ## Project Setup
 
