@@ -2,6 +2,13 @@
 
 This project is a rebuild of the original [Crux Axul](https://github.com/videothrone/crux-axul) site with Vue 3 in Vite. The goal is / was to create proper dynamic and linkable subpages and an easier way to build the release catalog, w/ the option to connect the whole app to a headless CMS down the line if necessary. I also wanted to re-factor the markup to [BEM](https://getbem.com/) principles and at least implement basic web accessibility. You can view change in versions in the <a href="CHANGELOG.md">Changelog</a>.
 
+## Preview
+
+[![Crux Axul](/public/screenshot1.png)](https://www.cruxaxul.com)
+
+## Live
+[https://www.cruxaxul.com](https://www.cruxaxul.com)
+
 ## Tech
 
 -  Built with Vue 3 / Vite
