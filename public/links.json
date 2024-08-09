@@ -1,37 +1,42 @@
 [
   {
-    "id": 1,
-    "url": "http://www.fluxwebzine.it/en/interview-with-sankt-and-lymbs/",
-    "label": "Label Interview /w Flux Webzine"
+      "id": 1,
+      "url": "http://www.fluxwebzine.it/en/interview-with-sankt-and-lymbs/",
+      "label": "Label Interview /w Flux Webzine"
   },
   {
-    "id": 2,
-    "url": "https://cruxaxul.bandcamp.com/",
-    "label": "Buy Tapes & Digital (Bandcamp)"
+      "id": 2,
+      "url": "https://cruxaxul.bandcamp.com/",
+      "label": "Buy Tapes & Digital (Bandcamp)"
   },
   {
-    "id": 3,
-    "url": "https://soundcloud.com/cruxaxul",
-    "label": "Soundcloud"
+      "id": 3,
+      "url": "https://www.discogs.com/label/1347728-Crux-Axul",
+      "label": "Discogs"
   },
   {
-    "id": 4,
-    "url": "https://www.instagram.com/crux.axul/",
-    "label": "Instagram"
+      "id": 4,
+      "url": "https://soundcloud.com/cruxaxul",
+      "label": "Soundcloud"
   },
   {
-    "id": 5,
-    "url": "https://www.facebook.com/CruxAxulRec",
-    "label": "Facebook"
+      "id": 5,
+      "url": "https://www.instagram.com/crux.axul/",
+      "label": "Instagram"
   },
   {
-    "id": 6,
-    "url": "https://www.mixcloud.com/cruxaxul/",
-    "label": "Mixes & Radioshows"
+      "id": 6,
+      "url": "https://www.facebook.com/CruxAxulRec",
+      "label": "Facebook"
   },
   {
-    "id": 7,
-    "url": "https://www.youtube.com/channel/UCcKD1XMRMXVhO5wL29qiE4A",
-    "label": "Youtube"
+      "id": 7,
+      "url": "https://www.mixcloud.com/cruxaxul/",
+      "label": "Mixes & Radioshows"
+  },
+  {
+      "id": 8,
+      "url": "https://www.youtube.com/channel/UCcKD1XMRMXVhO5wL29qiE4A",
+      "label": "Youtube"
   }
 ]
