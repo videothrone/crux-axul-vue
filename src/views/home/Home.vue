@@ -45,7 +45,7 @@
         class="content__home-right-section content__home-out-now"
       >
         <span class="content__home-out-now-text">
-          OUT SOON <v-icon name="hi-arrow-narrow-right" class="content__home-out-now-icon" scale="1.2"/>
+          OUT NOW <v-icon name="hi-arrow-narrow-right" class="content__home-out-now-icon" scale="1.2"/>
         </span>
         <span class="content__home-out-now-text">
           {{ release.releaseArtist }} - {{ release.releaseTitle }}
