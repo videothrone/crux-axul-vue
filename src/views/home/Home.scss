@@ -1,4 +1,4 @@
-@use 'sass-mq/mq';
+@use "sass-mq/mq";
 @use "@/assets/scss/mixins" as *;
 
 .content__home {
@@ -42,7 +42,6 @@
   @include mq.mq($from: m) {
     font-size: 3rem;
   }
-
 }
 
 a.content__home-out-now {
@@ -67,6 +66,7 @@ a.content__home-out-now {
 }
 
 .content__home .content__home-img {
+  aspect-ratio: 1/1;
   margin-bottom: 1rem;
 
   @include mq.mq($until: m) {

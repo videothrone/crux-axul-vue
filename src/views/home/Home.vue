@@ -12,6 +12,7 @@
             :src="`/assets/img/${release.releaseImg}`"
             :alt="`Cover of ${release.releaseTitle} by ${release.releaseArtist}`"
             class="content__home-img"
+            loading="lazy"
           />
         </a>
       </div>
@@ -43,6 +44,7 @@
         rel="noreferrer noopener"
         target="_blank"
         class="content__home-right-section content__home-out-now"
+        :aria-label="`Cover of ${release.releaseTitle} by ${release.releaseArtist}`"
       >
         <span class="content__home-out-now-text">
           OUT NOW <v-icon name="hi-arrow-narrow-right" class="content__home-out-now-icon" scale="1.2"/>
@@ -57,7 +59,9 @@
       <hr class="hrr" />
       <div class="content__home-right-section">
         <ul class="content__home-right-section-list">
-          <li class="content__home-right-section-list-item" v-for="tracklist in release.releaseTracklist">{{ tracklist.number }}. {{ tracklist.title }} {{ tracklist.runtime }}</li>
+          <li class="content__home-right-section-list-item" v-for="tracklist in release.releaseTracklist" :key="tracklist.number">
+            {{ tracklist.number }}. {{ tracklist.title }} {{ tracklist.runtime }}
+          </li>
         </ul>
       </div>
       <hr class="hrr" />
@@ -79,22 +83,23 @@ import { ref, onMounted } from 'vue';
 
 const release = ref([]);
 const isLoading = ref(true);
+const error = ref(null);
 
-onMounted(() => {
-  fetchData('/releases.json')
-    .then(data => {
-      const { releases } = data;
-      const newestRelease = releases[releases.length - 1];
-
-      if (newestRelease) {
-        release.value = newestRelease;
-        isLoading.value = false;
-      } else {
-        console.log(err.message, "No JSON found!");
-        return;
-      }
-    })
-    .catch(err => console.log(err.message));
+onMounted(async () => {
+  try {
+    const data = await fetchData('/releases.json');
+    const { releases } = data;
+    if (releases && releases.length > 0) {
+      release.value = releases[releases.length - 1];
+    } else {
+      error.value = "No releases found";
+    }
+  } catch (err) {
+    console.error(err.message);
+    error.value = "Failed to load release data";
+  } finally {
+    isLoading.value = false;
+  }
 });
 </script>
 
