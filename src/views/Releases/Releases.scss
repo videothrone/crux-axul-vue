@@ -1,4 +1,4 @@
-@use 'sass-mq/mq';
+@use "sass-mq/mq";
 @use "@/assets/scss/mixins" as *;
 
 :root {
@@ -22,7 +22,7 @@
 
   &:hover {
     background-color: var(--sec-color);
-    color: var(--main-color)
+    color: var(--main-color);
   }
 
   @include mq.mq($from: l) {
@@ -80,6 +80,12 @@
   @include mq.mq($from: l) {
     font-size: var(--font-size-default);
   }
+}
+
+.release-cover-image {
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  width: 100%;
 }
 
 .content_links {

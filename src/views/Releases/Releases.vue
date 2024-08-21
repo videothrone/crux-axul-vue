@@ -1,11 +1,28 @@
 <template>
-  <Loader v-if="isLoading"/>
+  <Loader v-if="isLoading" />
+
   <div class="content__releases-wrapper" v-if="!isLoading">
-    <button type="button" class="content__releases-sort-button" @click="changeReleasesOrder">Oldest ↓</button>
+    <button
+      type="button"
+      class="content__releases-sort-button"
+      @click="toggleSortOrder"
+    >
+      {{ sortOrder === 'asc' ? 'Newest ↑' : 'Oldest ↓' }}
+    </button>
+
     <ul class="content__releases">
-      <li class="content__releases-card" v-for="release in content.releases" :key="release.id">
+      <li
+        class="content__releases-card"
+        v-for="release in sortedReleases"
+        :key="release.id"
+      >
         <RouterLink :to="{ name: 'ReleaseDetails', params: { releaseDetails: release.id } }">
-          <img :src="`/assets/img/${release.releaseImg}`" />
+          <img
+            :src="`/assets/img/${release.releaseImg}`"
+            :alt="`Cover of ${release.releaseTitle}`"
+            loading="lazy"
+            class="release-cover-image"
+          />
           <div>{{ release.releaseArtist }} - {{ release.releaseTitle }}</div>
           <div class="content__releases-card-cat">→ {{ release.releaseNumber }}</div>
         </RouterLink>
@@ -15,41 +32,35 @@
 </template>
 
 <script setup>
+import { ref, computed, onMounted } from 'vue';
 import Loader from '@/components/loader/Loader.vue';
 import { fetchData } from '@/helpers/helperFunctions.js';
-import { ref, onMounted } from 'vue';
 
 const content = ref([]);
 const isLoading = ref(true);
+const sortOrder = ref('asc');
 
-onMounted(() => {
-  fetchData('/releases.json')
-    .then(data => {
-      content.value = data;
-      isLoading.value = false;
-    })
-    .catch(err => console.log(err.message));
+const sortedReleases = computed(() => {
+  return sortOrder.value === 'asc'
+    ? content.value.releases
+    : [...content.value.releases].reverse();
 });
 
-const changeReleasesOrder = () => {
-  const cardsList = document.querySelectorAll('.content__releases-card');
-  const reversedCards = Array.from(cardsList).reverse();
-  const contentReleases = document.querySelector('.content__releases');
-  const sortButton = document.querySelector('.content__releases-sort-button');
-
-  if (contentReleases) {
-    contentReleases.innerHTML = '';
-    reversedCards.forEach(card => {
-      contentReleases.appendChild(card);
-    });
+onMounted(async () => {
+  try {
+    const data = await fetchData('/releases.json');
+    content.value = data;
+  } catch (err) {
+    console.error(err.message);
+    // Add future error handling for user
+  } finally {
+    isLoading.value = false;
   }
+});
 
-  if (sortButton) {
-    const buttonText = sortButton.textContent;
-    sortButton.textContent = buttonText === 'Oldest ↓' ? 'Newest ↑' : 'Oldest ↓';
-  }
+const toggleSortOrder = () => {
+  sortOrder.value = sortOrder.value === 'asc' ? 'desc' : 'asc';
 };
-
 </script>
 
 <style lang="scss">
