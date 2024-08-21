@@ -12,7 +12,8 @@
             :src="`/assets/img/${release.releaseImg}`"
             :alt="`Cover of ${release.releaseTitle} by ${release.releaseArtist}`"
             class="content__home-img"
-            loading="lazy"
+            width="500"
+            height="500"
           />
         </a>
       </div>
