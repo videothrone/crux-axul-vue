@@ -1,6 +1,6 @@
 <template>
   <Loader v-if="isLoading"/>
-  <ul class="content__links" v-if="!isLoading">
+  <ul class="content__links" v-if="!isLoading" aria-label="External links">
     <li v-for="link in links" :key="link.id" class="content__link" role="listitem">
       <a :href="link.url" class="link link--inverted" rel="noreferrer noopener" target="_blank">{{ link.label }}</a>
     </li>
@@ -25,6 +25,6 @@ onMounted(() => {
 });
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @import './Links.scss';
 </style>
