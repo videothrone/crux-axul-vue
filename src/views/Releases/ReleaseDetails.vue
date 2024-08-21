@@ -1,17 +1,21 @@
 <template>
   <Loader v-if="isLoading"/>
   <div class="content__release" v-if="!isLoading">
-    <RouterLink :to="{ name: 'releases' }" class="content__release-back-button">← All releases</RouterLink>
+    <RouterLink :to="{ name: 'releases' }" class="content__release-back-button" v-once>
+      ← All releases
+    </RouterLink>
       <div class="content__release-info">
         <a
           :href="release.releaseLink"
           rel="noreferrer noopener"
           target="_blank"
           class="content__release-info-link"
+          :aria-label="`${release.releaseTitle} by ${release.releaseArtist}`"
           ><img
             :src="`/assets/img/${release.releaseImg}`"
             :alt="`Cover of ${release.releaseTitle} by ${release.releaseArtist}`"
             class="content__release-image"
+            loading="lazy"
           />
           <div class="content__release-info-text">{{ release.releaseTitle }}</div>
           <div class="content__release-info-catnr">
@@ -67,6 +71,7 @@ const props = defineProps({
 });
 const release = ref([]);
 const isLoading = ref(true);
+const error = ref(null);
 
 onMounted(() => {
   fetchData('/releases.json')
@@ -77,13 +82,17 @@ onMounted(() => {
 
       if (fetchedRelease) {
         release.value = fetchedRelease;
-        isLoading.value = false;
       } else {
-        console.log("No release found with ID:", releaseId);
-        return;
+        error.value = "Release not found";
       }
     })
-    .catch(err => console.log(err.message));
+    .catch(err => {
+      console.error(err.message);
+      error.value = "Failed to load release data";
+    })
+    .finally(() => {
+      isLoading.value = false;
+    });
 });
 </script>
 
