@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [1.0.2] - 2024-09-29
+* Update dependencies
+* Add additional meta tags to index.html
+
 ## [1.0.1] - 2024-08-21
 * Add release data for CXA011
 * Readme updates
