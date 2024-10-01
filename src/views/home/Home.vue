@@ -1,31 +1,25 @@
 <template>
-  <Loader v-if="isLoading"/>
+  <Loader v-if="isLoading" />
   <div class="content__home" v-if="!isLoading">
     <div id="content__home-left">
       <div id="content__home-left-cover">
-        <a
-          :href="release.releaseLink"
-          rel="noreferrer noopener"
-          target="_blank"
-        >
-          <img
-            :src="`/assets/img/${release.releaseImg}`"
-            :alt="`Cover of ${release.releaseTitle} by ${release.releaseArtist}`"
-            class="content__home-img"
-            width="500"
-            height="500"
-          />
+        <a :href="release.releaseLink" rel="noreferrer noopener" target="_blank">
+          <img :src="`/assets/img/${release.releaseImg}`"
+            :alt="`Cover of ${release.releaseTitle} by ${release.releaseArtist}`" class="content__home-img" width="500"
+            height="500" />
         </a>
       </div>
       <div>
-        <iframe
-          style="border: 0; width: 100%; height: 42px;"
-          :src="release.releaseBandcampEmbbed"
-          seamless="">
-          <a :href="release.releaseLink">
+        <div>
+          <iframe style="border: 0; width: 100%; height: 42px;" :src="release.releaseBandcampEmbbed" seamless>
             {{ release.releaseTitle }} by {{ release.releaseArtist }}
-          </a>
-        </iframe>
+          </iframe>
+          <div class="visually-hidden">
+            <a :href="release.releaseLink" rel="noreferrer noopener" target="_blank">
+              {{ release.releaseTitle }} by {{ release.releaseArtist }}
+            </a>
+          </div>
+        </div>
       </div>
       <div id="content__home-left-details">
         <div class="content__home-release-format">
@@ -40,15 +34,11 @@
       </div>
     </div>
     <div class="content__home-right">
-      <a
-        :href="release.releaseLink"
-        rel="noreferrer noopener"
-        target="_blank"
+      <a :href="release.releaseLink" rel="noreferrer noopener" target="_blank"
         class="content__home-right-section content__home-out-now"
-        :aria-label="`Cover of ${release.releaseTitle} by ${release.releaseArtist}`"
-      >
+        :aria-label="`Cover of ${release.releaseTitle} by ${release.releaseArtist}`">
         <span class="content__home-out-now-text">
-          OUT NOW <v-icon name="hi-arrow-narrow-right" class="content__home-out-now-icon" scale="1.2"/>
+          OUT NOW <v-icon name="hi-arrow-narrow-right" class="content__home-out-now-icon" scale="1.2" />
         </span>
         <span class="content__home-out-now-text">
           {{ release.releaseArtist }} - {{ release.releaseTitle }}
@@ -60,7 +50,8 @@
       <hr class="hrr" />
       <div class="content__home-right-section">
         <ul class="content__home-right-section-list">
-          <li class="content__home-right-section-list-item" v-for="tracklist in release.releaseTracklist" :key="tracklist.number">
+          <li class="content__home-right-section-list-item" v-for="tracklist in release.releaseTracklist"
+            :key="tracklist.number">
             {{ tracklist.number }}. {{ tracklist.title }} {{ tracklist.runtime }}
           </li>
         </ul>
