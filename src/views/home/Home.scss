@@ -70,6 +70,7 @@ a.content__home-out-now {
   margin-bottom: 1rem;
 
   @include mq.mq($until: m) {
+    height: 100%;
     max-width: 100%;
     width: 100%;
   }
