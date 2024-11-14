@@ -5,16 +5,14 @@
       ← All releases
     </RouterLink>
     <div class="content__release-info">
-      <a :href="release.releaseLink" rel="noreferrer noopener" target="_blank" class="content__release-info-link"
-        :aria-label="`${release.releaseTitle} by ${release.releaseArtist}`"><img
-          :src="`/assets/img/${release.releaseImg}`"
-          :alt="`Cover of ${release.releaseTitle} by ${release.releaseArtist}`" class="content__release-image"
-          loading="lazy" />
-        <div class="content__release-info-text">{{ release.releaseTitle }}</div>
-        <div class="content__release-info-catnr">
-          → {{ release.releaseNumber }}
-        </div>
-      </a>
+      <ReleaseLink
+        :releaseLink="release.releaseLink"
+        :releaseTitle="release.releaseTitle"
+        :releaseArtist="release.releaseArtist"
+        :releaseImg="release.releaseImg"
+        :releaseNumber="release.releaseNumber"
+        class="content__release-info-release-link"
+      />
       <iframe style="border: 0; width: 100%; height: 42px" :src="release.releaseBandcampEmbbed" seamless>
         {{ release.releaseTitle }} by {{ release.releaseArtist }}
       </iframe>
@@ -59,6 +57,7 @@
 
 <script setup>
 import Loader from '@/components/loader/Loader.vue';
+import ReleaseLink from '@/components/release-link/ReleaseLink.vue';
 import { fetchData } from '@/helpers/helperFunctions.js';
 import { ref, onMounted } from 'vue';
 

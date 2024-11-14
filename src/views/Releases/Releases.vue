@@ -16,16 +16,15 @@
         v-for="release in sortedReleases"
         :key="release.id"
       >
-        <RouterLink :to="{ name: 'ReleaseDetails', params: { releaseDetails: release.id } }">
-          <img
-            :src="`/assets/img/${release.releaseImg}`"
-            :alt="`Cover of ${release.releaseTitle}`"
-            loading="lazy"
-            class="release-cover-image"
-          />
-          <div>{{ release.releaseArtist }} - {{ release.releaseTitle }}</div>
-          <div class="content__releases-card-cat">→ {{ release.releaseNumber }}</div>
-        </RouterLink>
+        <ReleaseLink
+          :isRouterLink="true"
+          :releaseId="release.id"
+          :releaseTitle="release.releaseTitle"
+          :releaseArtist="release.releaseArtist"
+          :releaseImg="release.releaseImg"
+          :releaseNumber="release.releaseNumber"
+          class="content__releases-card-link"
+        />
       </li>
     </ul>
   </div>
@@ -34,6 +33,7 @@
 <script setup>
 import { ref, computed, onMounted } from 'vue';
 import Loader from '@/components/loader/Loader.vue';
+import ReleaseLink from '@/components/release-link/ReleaseLink.vue';
 import { fetchData } from '@/helpers/helperFunctions.js';
 
 const content = ref([]);
