@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [1.0.4] - 2024-11-14
+* Add ReleaseLink component, which replaces duplicate code in Releases / ReleaseDetails
+
 ## [1.0.3] - 2024-11-10
 * Force newest release img height on mobile
 * Fix Bandcamp iframe link HTML fallbacks
