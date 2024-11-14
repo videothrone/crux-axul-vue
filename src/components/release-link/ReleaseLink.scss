@@ -1,0 +1,19 @@
+@use "sass-mq/mq";
+@use "@/assets/scss/mixins" as *;
+
+.release-link {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+}
+
+.release-link__image {
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  width: 100%;
+}
+
+.release-link__info {
+  color: var(--black-color);
+  padding: 2rem;
+}
