@@ -5,11 +5,11 @@
   --content-card-font-color: black;
 }
 
-.content__releases-wrapper {
+.releases-wrapper {
   width: 100%;
 }
 
-.content__releases-sort-button {
+.releases-sort-button {
   background-color: var(--main-color);
   border: none;
   cursor: pointer;
@@ -31,7 +31,7 @@
   }
 }
 
-.content__releases {
+.releases {
   @include list-reset();
 
   display: grid;
@@ -41,16 +41,5 @@
 
   @include mq.mq($from: l) {
     grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
-  }
-}
-
-.content__releases-card {
-  background-color: var(--main-color);
-  transition: color 0.3s ease-out, background 0.3s ease-in;
-
-  &:hover,
-  &:focus-visible {
-    background-color: var(--sec-color);
-    color: var(--content-card-font-color);
   }
 }

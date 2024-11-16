@@ -1,29 +1,28 @@
 <template>
   <Loader v-if="isLoading" />
 
-  <div class="content__releases-wrapper" v-if="!isLoading">
+  <div class="releases-wrapper" v-if="!isLoading">
     <button
       type="button"
-      class="content__releases-sort-button"
+      class="releases-sort-button"
       @click="toggleSortOrder"
     >
       {{ sortOrder === 'asc' ? 'Newest ↑' : 'Oldest ↓' }}
     </button>
 
-    <ul class="content__releases">
+    <ul class="releases">
       <li
-        class="content__releases-card"
+        class="releases__card"
         v-for="release in sortedReleases"
         :key="release.id"
       >
-        <ReleaseLink
+        <ReleaseCard
           :isRouterLink="true"
           :releaseId="release.id"
           :releaseTitle="release.releaseTitle"
           :releaseArtist="release.releaseArtist"
           :releaseImg="release.releaseImg"
           :releaseNumber="release.releaseNumber"
-          class="content__releases-card-link"
         />
       </li>
     </ul>
@@ -33,7 +32,7 @@
 <script setup>
 import { ref, computed, onMounted } from 'vue';
 import Loader from '@/components/loader/Loader.vue';
-import ReleaseLink from '@/components/release-link/ReleaseLink.vue';
+import ReleaseCard from '@/components/release-card/ReleaseCard.vue';
 import { fetchData } from '@/helpers/helperFunctions.js';
 
 const content = ref([]);
