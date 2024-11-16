@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [1.0.5] - 2024-11-16
+* Rename _helpers.scss to _utils.scss
+* Refactor ReleaseLink to ReleaseCard /w proper markup
+* Adjust Releases classes
+
 ## [1.0.4] - 2024-11-14
 * Add ReleaseLink component, which replaces duplicate code in Releases / ReleaseDetails
 
