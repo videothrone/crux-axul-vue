@@ -47,8 +47,18 @@
   }
 }
 
-.content__release-info-release-link {
-  background-color: var(--main-color);
+.content__release--release-card {
+  height: fit-content !important;
+
+  &:hover,
+  &:focus-visible {
+    background-color: var(--main-color) !important;
+  }
+
+  &:hover .release-card__info-catnr,
+  &:focus-visible .release-card__info-catnr {
+    color: var(--sec-color) !important;
+  }
 }
 
 .content__release-info iframe {
@@ -85,7 +95,7 @@
   }
 }
 
-hr.hrr--content__release {
+hr.hrr--content-release {
   border: none;
   border-top: 0.2rem dashed var(--sec-color);
   margin: 2rem 0;

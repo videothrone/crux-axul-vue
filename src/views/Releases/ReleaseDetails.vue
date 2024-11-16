@@ -5,13 +5,13 @@
       ← All releases
     </RouterLink>
     <div class="content__release-info">
-      <ReleaseLink
+      <ReleaseCard
         :releaseLink="release.releaseLink"
         :releaseTitle="release.releaseTitle"
         :releaseArtist="release.releaseArtist"
         :releaseImg="release.releaseImg"
         :releaseNumber="release.releaseNumber"
-        class="content__release-info-release-link"
+        class="content__release--release-card"
       />
       <iframe style="border: 0; width: 100%; height: 42px" :src="release.releaseBandcampEmbbed" seamless>
         {{ release.releaseTitle }} by {{ release.releaseArtist }}
@@ -37,13 +37,13 @@
       <div class="content__release-promotext-blurb">
         <p v-html="release.releaseBlurb"></p>
       </div>
-      <hr class="hrr hrr--content__release" />
+      <hr class="hrr hrr--content-release" />
       <div class="content__release-promotext-tracklist">
         <div v-for="tracklist in release.releaseTracklist">
           {{ tracklist.number }}. {{ tracklist.title }} {{ tracklist.runtime }}
         </div>
       </div>
-      <hr class="hrr hrr--content__release" />
+      <hr class="hrr hrr--content-release" />
       <div class="content__release-promotext-credits">
         <ul>
           <li v-if="release.releaseProducer">Produced by {{ release.releaseProducer }}</li>
@@ -57,7 +57,7 @@
 
 <script setup>
 import Loader from '@/components/loader/Loader.vue';
-import ReleaseLink from '@/components/release-link/ReleaseLink.vue';
+import ReleaseCard from '@/components/release-card/ReleaseCard.vue';
 import { fetchData } from '@/helpers/helperFunctions.js';
 import { ref, onMounted } from 'vue';
 
