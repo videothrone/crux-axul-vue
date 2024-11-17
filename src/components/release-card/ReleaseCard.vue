@@ -3,7 +3,7 @@
     <img :src="`/assets/img/${releaseImg}`" :alt="`Cover of ${releaseTitle} by ${releaseArtist}`"
       class="release-card__image" loading="lazy" />
     <div class="release-card__info">
-      <div v-if="isRouterLink" class="release-card__info-artist">{{ releaseArtist }}</div>
+      <div v-if="isRouterLink" class="release-card__info-artist">{{ releaseArtist }} —</div>
       <component :is="isRouterLink ? 'RouterLink' : 'a'"
         :to="isRouterLink ? { name: 'ReleaseDetails', params: { releaseDetails: releaseId } } : undefined"
         :href="!isRouterLink ? releaseLink : undefined"
