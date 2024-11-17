@@ -4,13 +4,30 @@
   --sec-color: #ffffff;
   --black-color: #000;
 
+  // Font styles
+  --font-family--primary: "DidacticGothic", Helvetica, Arial, sans-serif;
+
   // Font sizes
   --font-size-large: 2.2rem;
   --font-size-default: 2rem;
   --font-size-small: 1.8rem;
+  --font-size-smallest: 1.6rem;
+
+  // Border
+  --border-radius: 16px;
+
+  // Box shadow
+  --box-shadow-size: 24px;
+  --box-shadow: 0 0 var(--box-shadow-size) rgba(0, 0, 0, 0.1);
+  --box-shadow-hover: 0 0 var(--box-shadow-size) rgba(255, 255, 255, 1);
+
+  // Padding
+  --padding-global-desktop: 80px;
+  --padding-global-mobile: 20px;
+
+  // Transitions
+  --transition-duration: 0.3s;
 
   // Global maximum width
   --global-max-width: 144rem;
 }
-
-
