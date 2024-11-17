@@ -1,14 +1,19 @@
-@use 'sass-mq/mq';
+@use "sass-mq/mq";
 @use "@/assets/scss/mixins" as *;
 
 .content__links {
   @include list-reset();
 
   background-color: var(--main-color);
+  border-left: 0.5rem solid var(--sec-color);
   margin-top: 2rem;
   padding: 2rem;
   position: relative;
   width: 100%;
+
+  @include mq.mq($from: xl) {
+    border-left: 1rem solid var(--sec-color);
+  }
 
   &:after {
     bottom: -6.5rem;
@@ -34,12 +39,16 @@
 }
 
 .content__link {
-  font-size: 2.2rem;
+  font-size: var(--font-size-small);
 
   @include mq.mq($until: xl) {
     &:not(:last-of-type) {
       margin-bottom: 1.5rem;
     }
+  }
+
+  @include mq.mq($from: xl) {
+    font-size: var(--font-size-large);
   }
 
   a.link--inverted:hover,
