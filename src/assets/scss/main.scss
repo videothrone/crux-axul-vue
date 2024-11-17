@@ -106,8 +106,8 @@ a.link--inverted {
 
   @include mq.mq($until: l) {
     max-width: 100%;
-    width: 100%;
     text-align: center;
+    width: 100%;
   }
 }
 
@@ -122,11 +122,11 @@ a.link--inverted {
 .content {
   color: var(--sec-color);
   display: flex;
-  font-family: "DidacticGothic", Helvetica, Arial, sans-serif;
+  font-family: var(--font-family--primary);
   font-size: var(--font-size-default);
   justify-content: center;
-  margin: 0 2rem 2rem;
   line-height: 1.4;
+  margin: 0 2rem 2rem;
 
   @include mq.mq($until: m) {
     font-size: var(--font-size-small);
