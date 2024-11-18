@@ -11,9 +11,9 @@
 .loader {
   display: none;
   height: 8rem;
-  left: calc(50% - 4rem);
+  left: calc(50%);
   pointer-events: all;
-  top: calc(50% - 4rem);
+  top: calc(50%);
   z-index: 666;
 
   &.loader--loading {
