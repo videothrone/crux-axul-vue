@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [1.0.6] - 2024-11-18
+* Add / update variables.css
+* Minor class updates to main.css
+* Add border and reduce font-size for Links on mobile
+* Small adjustments to ReleaseCard info design
+* Adjust Home top margin
+* Adjust Loader position
+
 ## [1.0.5] - 2024-11-16
 * Rename _helpers.scss to _utils.scss
 * Refactor ReleaseLink to ReleaseCard /w proper markup
