@@ -19,6 +19,7 @@
   -o-transition: color 0.3s ease-out, background 0.3s ease-in;
   -webkit-transition: color 0.3s ease-out, background 0.3s ease-in;
   background-color: var(--main-color);
+  border-left: var(--border-left-white);
   color: var(--black-color);
   display: block;
   font-size: var(--font-size-default);
@@ -46,8 +47,10 @@
 }
 
 a.content__home-out-now {
-  &:hover {
+  &:hover,
+  &:focus-visible {
     background-color: var(--sec-color);
+    border-left: var(--border-left-white-hover);
     color: var(--black-color);
 
     &:before {
