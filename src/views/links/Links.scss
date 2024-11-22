@@ -5,7 +5,7 @@
   @include list-reset();
 
   background-color: var(--main-color);
-  border-left: 0.5rem solid var(--sec-color);
+  border-left: var(--border-left-white);
   margin-top: 2rem;
   padding: 2rem;
   position: relative;
