@@ -13,7 +13,7 @@
         :releaseNumber="release.releaseNumber"
         class="content__release--release-card"
       />
-      <iframe style="border: 0; width: 100%; height: 42px" :src="release.releaseBandcampEmbbed" seamless>
+      <iframe title="Bandcamp Player" style="border: 0; width: 100%; height: 42px" :src="release.releaseBandcampEmbbed" seamless>
         {{ release.releaseTitle }} by {{ release.releaseArtist }}
       </iframe>
       <div class="visually-hidden">
