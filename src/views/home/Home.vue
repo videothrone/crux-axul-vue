@@ -36,13 +36,15 @@
     <div class="content__home-right">
       <a :href="release.releaseLink" rel="noreferrer noopener" target="_blank"
         class="content__home-right-section content__home-out-now"
-        :aria-label="`Cover of ${release.releaseTitle} by ${release.releaseArtist}`">
-        <span class="content__home-out-now-text">
-          OUT NOW <v-icon name="hi-arrow-narrow-right" class="content__home-out-now-icon" scale="1.2" />
-        </span>
-        <span class="content__home-out-now-text">
-          {{ release.releaseArtist }} - {{ release.releaseTitle }}
-        </span>
+        :aria-label="`${release.releaseArtist} - ${release.releaseTitle}, Out Now. Listen on Bandcamp.`">
+        <p class="release-card__header">
+          <span class="release-card__out-now">Out Now</span>
+          <v-icon name="hi-arrow-narrow-right" class="release-card__icon" scale="1.2" aria-hidden="true" />
+         </p>
+        <p class="release-card__body">
+          <span class="release-card__artist">{{ release.releaseArtist }} -</span>
+          <span class="release-card__title">&nbsp;{{ release.releaseTitle }}</span>
+        </p>
       </a>
       <div class="content__home-right-section">
         <p v-html="release.releaseBlurb"></p>
