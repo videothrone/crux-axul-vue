@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [1.0.7] - 2024-11-28
+* Add variable for vertical left border
+* Add left vertical border to out-now link
+* Add title attr to BC iframes
+* Replace screenshot in readme
+* Replace secondary font /w variable
+* Refactor "out-now" box on Home view /w new design
+
 ## [1.0.6] - 2024-11-18
 * Add / update variables.css
 * Minor class updates to main.css
