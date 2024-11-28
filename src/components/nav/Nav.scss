@@ -1,8 +1,8 @@
-@use 'sass-mq/mq';
-@use '@/assets/scss/mixins' as *;
+@use "sass-mq/mq";
+@use "@/assets/scss/mixins" as *;
 
 .header__menu {
-  font-family: 'UnifrakturCook-Bold-Terrible', Helvetica, Arial, serif;
+  font-family: var(--font-family--secondary);
 
   @include mq.mq($until: l) {
     display: flex;
@@ -44,7 +44,7 @@
 .header__menu-button::after,
 .header__menu-button::before {
   background-color: var(--main-color);
-  content: '';
+  content: "";
   display: block;
   height: 0.4rem;
   margin: 0.6rem 0;
