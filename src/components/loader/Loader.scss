@@ -1,3 +1,6 @@
+@use "sass-mq/mq";
+@use "@/assets/scss/mixins" as *;
+
 .loader-wrapper {
   > .loader.loader--loading {
     background-color: var(--main-color);
