@@ -47,7 +47,7 @@
         </p>
       </a>
       <div class="content__home-right-section">
-        <p v-html="release.releaseBlurb"></p>
+        <ExpandableText :text="release.releaseBlurb" :maxLength="200" />
       </div>
       <hr class="hrr" />
       <div class="content__home-right-section">
@@ -72,6 +72,7 @@
 
 <script setup>
 import Loader from '@/components/loader/Loader.vue';
+import ExpandableText from '@/components/expandable-text/ExpandableText.vue';
 import { fetchData } from '@/helpers/helperFunctions.js';
 import { ref, onMounted } from 'vue';
 
