@@ -35,15 +35,15 @@
     </div>
     <div class="content__release-promotext">
       <div class="content__release-promotext-blurb">
-        <p v-html="release.releaseBlurb"></p>
+        <ExpandableText :text="release.releaseBlurb" :maxLength="200" />
       </div>
-      <hr class="hrr hrr--content-release" />
+      <hr class="hrr hrr--content-release hrr--no-gap" />
       <div class="content__release-promotext-tracklist">
         <div v-for="tracklist in release.releaseTracklist">
           {{ tracklist.number }}. {{ tracklist.title }} {{ tracklist.runtime }}
         </div>
       </div>
-      <hr class="hrr hrr--content-release" />
+      <hr class="hrr hrr--content-release hrr--no-gap" />
       <div class="content__release-promotext-credits">
         <ul>
           <li v-if="release.releaseProducer">Produced by {{ release.releaseProducer }}</li>
@@ -58,6 +58,7 @@
 <script setup>
 import Loader from '@/components/loader/Loader.vue';
 import ReleaseCard from '@/components/release-card/ReleaseCard.vue';
+import ExpandableText from '@/components/expandable-text/ExpandableText.vue';
 import { fetchData } from '@/helpers/helperFunctions.js';
 import { ref, onMounted } from 'vue';
 

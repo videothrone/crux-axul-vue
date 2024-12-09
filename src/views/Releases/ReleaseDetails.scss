@@ -116,3 +116,12 @@ hr.hrr--content-release {
     @include list-reset();
   }
 }
+
+.content__release-promotext-blurb {
+  margin-bottom: 4rem;
+}
+
+.content__release-promotext-blurb .expandable-text__toggle {
+  color: var(--sec-color);
+  outline: 2px solid var(--sec-color);
+}
