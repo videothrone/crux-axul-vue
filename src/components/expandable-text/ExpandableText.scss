@@ -30,7 +30,7 @@
 
   &__toggle {
     background: none;
-    border: 0.2rem solid var(--main-color);
+    border: 0.2rem dashed var(--main-color);
     color: var(--main-color);
     cursor: pointer;
     display: block;
