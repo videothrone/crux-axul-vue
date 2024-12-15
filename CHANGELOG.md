@@ -7,12 +7,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [1.0.9] - 2024-12-15
+* Change ExpandableText outline to dashed border
+* Readme updates
+
 ## [1.0.8] - 2024-12-09
 * Add ExpandableText component
 * Adjust Loader SCSS implementation
 * Refactor Home component and gaps
 * Refactor ReleaseDetail component and gaps
-* Add margin-bottom to ReleaseCard lin
+* Add margin-bottom to ReleaseCard link
 
 ## [1.0.7] - 2024-11-28
 * Add variable for vertical left border
