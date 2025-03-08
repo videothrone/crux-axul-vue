@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [1.1.0] - 2025-03-08
+* Fix ReleaseCard ::before link, was not stretching properly over parent container
+* Adjust Home out-now container paddings and margins
+
 ## [1.0.9] - 2024-12-15
 * Change ExpandableText outline to dashed border
 * Readme updates
