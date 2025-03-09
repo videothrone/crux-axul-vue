@@ -18,11 +18,19 @@
     "@rushstack/eslint-patch": "^1.1.0",
     "@vitejs/plugin-vue": "^4.1.0",
     "@vue/eslint-config-prettier": "^7.0.0",
+    "browserslist": "^4.24.4",
     "eslint": "^8.5.0",
     "eslint-plugin-vue": "^8.2.0",
     "parser": "@babel/eslint-parser",
     "prettier": "^2.5.1",
     "sass": "^1.54.0",
     "vite": "^4.2.0"
-  }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 3 versions",
+    "maintained node versions",
+    "not dead",
+    "not ie <= 19"
+  ]
 }
