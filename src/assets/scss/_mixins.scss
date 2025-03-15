@@ -6,3 +6,36 @@
   margin: 0;
   padding-left: 0;
 }
+
+/**
+ * Hide elements visually while keeping them accessible to screen readers
+ */
+@mixin screen-reader-text {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+
+  &:focus {
+    box-shadow: var(--box-shadow);
+    background-color: var(--sec-color);
+    clip: auto;
+    color: var(--black-color);
+    display: block;
+    font-size: 1.4rem;
+    font-family: var(--font-family--primary);
+    height: auto;
+    left: 0.5rem;
+    line-height: normal;
+    padding: 1.5rem 2.3rem 1.4rem;
+    position: fixed;
+    text-decoration: none;
+    top: 0.5rem;
+    width: auto;
+    z-index: 666;
+  }
+}
