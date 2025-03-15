@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [1.1.0] - 2025-03-13
+* Add h1 and skip-link to App view
+* Add meta color-schema to index.html
+* Add robots.txt
+* Add browserslist to package.json
+
 ## [1.1.0] - 2025-03-08
 * Fix ReleaseCard ::before link, was not stretching properly over parent container
 * Adjust Home out-now container paddings and margins
