@@ -1,7 +1,9 @@
 <template>
   <article class="release-card" :class="$attrs.class">
-    <img :src="`/assets/img/${releaseImg}`" :alt="`Cover of ${releaseTitle} by ${releaseArtist}`"
-      class="release-card__image" loading="lazy" />
+    <div class="release-card__image-wrapper">
+      <img :src="`/assets/img/${releaseImg}`" :alt="`Cover of ${releaseTitle} by ${releaseArtist}`" class="release-card__image" loading="lazy" />
+    </div>
+
     <div class="release-card__info">
       <div v-if="isRouterLink" class="release-card__info-artist">{{ releaseArtist }} —</div>
       <component :is="isRouterLink ? 'RouterLink' : 'a'"
@@ -34,5 +36,5 @@ const props = defineProps({
 </script>
 
 <style lang="scss" scoped>
-@import './ReleaseCard.scss';
+@use './ReleaseCard.scss';
 </style>
