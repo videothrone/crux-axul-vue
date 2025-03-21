@@ -7,7 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
-## [1.1.0] - 2025-03-13
+## [1.1.2] - 2025-03-21
+* Fix unicode pseudo elem position on ReleaseCard
+* Add JSdoc to fetchData helper function
+* Upgrade SASS @import to @use in all files
+* Upgrade dependencies
+* Add package-lock.json to .gitignore
+* Delete package-lock.json from repo
+
+## [1.1.1] - 2025-03-13
 * Add h1 and skip-link to App view
 * Add meta color-schema to index.html
 * Add robots.txt
