@@ -63,5 +63,5 @@ const toggleSortOrder = () => {
 </script>
 
 <style lang="scss">
-@import './Releases.scss';
+@use './Releases.scss';
 </style>

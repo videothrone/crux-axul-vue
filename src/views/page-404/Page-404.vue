@@ -5,5 +5,5 @@
 </template>
 
 <style lang="scss">
-@import './Page-404.scss';
+@use './Page-404.scss';
 </style>

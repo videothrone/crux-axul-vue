@@ -99,5 +99,5 @@ onMounted(async () => {
 </script>
 
 <style lang="scss">
-@import './Home.scss';
+@use './Home.scss';
 </style>

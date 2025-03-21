@@ -45,5 +45,5 @@ const toggleExpand = () => {
 </script>
 
 <style lang="scss" scoped>
-@import './ExpandableText.scss';
+@use './ExpandableText.scss';
 </style>

@@ -75,7 +75,9 @@ body {
 a {
   color: var(--main-color);
   text-decoration: none;
-  transition: color 0.3s ease-out, background 1s ease-in;
+  transition:
+    color 0.3s ease-out,
+    background 1s ease-in;
 }
 
 a:link,

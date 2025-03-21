@@ -67,5 +67,5 @@ const onKeydown = (event) => {
 </script>
 
 <style lang="scss">
-@import './Nav.scss';
+@use './Nav.scss';
 </style>

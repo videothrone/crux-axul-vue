@@ -10,5 +10,5 @@
 </template>
 
 <style lang="scss" scoped>
-@import './Loader.scss';
+@use './Loader.scss';
 </style>
