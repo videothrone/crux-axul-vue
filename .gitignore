@@ -14,3 +14,4 @@ npm-debug.log
 .idea
 .vscode
 *.mo
+package-lock.json
