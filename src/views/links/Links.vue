@@ -26,5 +26,5 @@ onMounted(() => {
 </script>
 
 <style lang="scss" scoped>
-@import './Links.scss';
+@use './Links.scss';
 </style>
