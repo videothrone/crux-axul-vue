@@ -9,7 +9,12 @@
     >
       {{ sortOrder === 'asc' ? 'Newest ↑' : 'Oldest ↓' }}
     </button>
-
+    <select class="releases-filter" v-model="selectedArtist">
+      <option value="all">All</option>
+      <option v-for="artist in uniqueArtists" :key="artist" :value="artist">
+        {{ artist }}
+      </option>
+    </select>
     <ul class="releases">
       <li
         class="releases__card"
@@ -38,17 +43,29 @@ import { fetchData } from '@/helpers/helperFunctions.js';
 const content = ref([]);
 const isLoading = ref(true);
 const sortOrder = ref('asc');
+const uniqueArtists = ref([]);
+const selectedArtist = ref('all');
 
 const sortedReleases = computed(() => {
-  return sortOrder.value === 'asc'
-    ? content.value.releases
-    : [...content.value.releases].reverse();
+  if (selectedArtist.value === 'all') {
+    return sortOrder.value === 'asc'
+      ? content.value.releases
+      : [...content.value.releases].reverse();
+  } else {
+    return sortOrder.value === 'asc'
+      ? content.value.releases.filter(release => release.releaseArtist === selectedArtist.value)
+      : [...content.value.releases.filter(release => release.releaseArtist === selectedArtist.value)].reverse();
+  }
 });
+
+console.log(selectedArtist);
 
 onMounted(async () => {
   try {
     const data = await fetchData('/releases.json');
     content.value = data;
+    const artists = data.releases.map(release => release.releaseArtist);
+    uniqueArtists.value = [...new Set(artists)];
   } catch (err) {
     console.error(err.message);
     // Add future error handling for user
@@ -60,6 +77,7 @@ onMounted(async () => {
 const toggleSortOrder = () => {
   sortOrder.value = sortOrder.value === 'asc' ? 'desc' : 'asc';
 };
+
 </script>
 
 <style lang="scss">
