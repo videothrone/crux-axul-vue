@@ -21,27 +21,26 @@
 </template>
 
 <script setup>
-import { ref, computed } from 'vue';
+  import { ref, computed } from 'vue';
 
-const props = defineProps({
-  text: {
-    type: String,
-    required: true
-  },
-  maxLength: {
-    type: Number,
-    default: 200
-  }
-});
+  const props = defineProps({
+    text: {
+      type: String,
+      required: true
+    },
+    maxLength: {
+      type: Number,
+      default: 200
+    }
+  });
 
-const isExpanded = ref(false);
-const uniqueId = computed(() => `expandable-text-${Math.random().toString(36).substr(2, 9)}`);
+  const isExpanded = ref(false);
+  const uniqueId = computed(() => `expandable-text-${Math.random().toString(36).substr(2, 9)}`);
+  const shouldExpand = computed(() => props.text.length > props.maxLength);
 
-const shouldExpand = computed(() => props.text.length > props.maxLength);
-
-const toggleExpand = () => {
-  isExpanded.value = !isExpanded.value;
-};
+  const toggleExpand = () => {
+    isExpanded.value = !isExpanded.value;
+  };
 </script>
 
 <style lang="scss" scoped>
