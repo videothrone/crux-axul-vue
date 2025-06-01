@@ -2,19 +2,26 @@
   <Loader v-if="isLoading" />
 
   <div class="releases-wrapper" v-if="!isLoading">
-    <button
-      type="button"
-      class="releases-sort-button"
-      @click="toggleSortOrder"
-    >
-      {{ sortOrder === 'asc' ? 'Newest ↑' : 'Oldest ↓' }}
-    </button>
-    <select class="releases-filter" v-model="selectedArtist">
-      <option value="all">All</option>
-      <option v-for="artist in uniqueArtists" :key="artist" :value="artist">
-        {{ artist }}
-      </option>
-    </select>
+
+    <div class="releases-controls">
+      <button
+        type="button"
+        class="releases-controls__sort-button"
+        @click="toggleSortOrder"
+      >
+        {{ sortOrder === 'asc' ? 'Newest ↑' : 'Oldest ↓' }}
+      </button>
+      <div class="releases-controls__filter-wrapper">
+        <select class="releases-controls__filter" v-model="selectedArtist">
+          <option value="all">All</option>
+          <option v-for="artist in uniqueArtists" :key="artist" :value="artist">
+            {{ artist }}
+          </option>
+        </select>
+        <v-icon name="hi-chevron-down" aria-hidden="true" />
+      </div>
+    </div>
+
     <ul class="releases">
       <li
         class="releases__card"
@@ -57,8 +64,6 @@ const sortedReleases = computed(() => {
       : [...content.value.releases.filter(release => release.releaseArtist === selectedArtist.value)].reverse();
   }
 });
-
-console.log(selectedArtist);
 
 onMounted(async () => {
   try {

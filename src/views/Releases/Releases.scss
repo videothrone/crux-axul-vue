@@ -9,26 +9,60 @@
   width: 100%;
 }
 
-.releases-sort-button {
+.releases-controls {
+  align-items: center;
+  display: flex;
+  gap: 2rem;
+  margin-block-end: 2rem;
+}
+
+.releases-controls__filter-wrapper {
+  position: relative;
+}
+
+.releases-controls__filter-wrapper,
+.releases-controls__sort-button {
+  appearance: none;
   background-color: var(--main-color);
   border: none;
   cursor: pointer;
-  float: right;
   font-size: var(--font-size-small);
+  font-family: var(--font-family--primary);
   height: fit-content;
-  margin-bottom: 2rem;
   padding: 1rem;
   width: fit-content;
 
-  &:hover {
+  &:hover,
+  &:focus-visible {
     background-color: var(--sec-color);
     color: var(--main-color);
+
+    .releases-controls__filter {
+      background-color: var(--sec-color);
+      color: var(--main-color);
+    }
   }
 
   @include mq.mq($from: l) {
-    float: left;
     font-size: var(--font-size-default);
   }
+
+  svg {
+    bottom: 1.5rem;
+    height: 1.5rem;
+    pointer-events: none;
+    position: absolute;
+    right: 1.5rem;
+    width: 1.5rem;
+  }
+}
+
+.releases-controls__filter {
+  appearance: none;
+  background-color: var(--main-color);
+  border: none;
+  height: 100%;
+  width: 100%;
 }
 
 .releases {
