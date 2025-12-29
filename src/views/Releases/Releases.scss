@@ -16,20 +16,19 @@
   margin-block-end: 2rem;
 }
 
-.releases-controls__filter-wrapper {
-  position: relative;
-}
-
 .releases-controls__filter-wrapper,
 .releases-controls__sort-button {
   appearance: none;
   background-color: var(--main-color);
-  border: none;
-  cursor: pointer;
+  border: 0;
+  cursor: pointer !important;
   font-size: var(--font-size-small);
   font-family: var(--font-family--primary);
-  height: fit-content;
+  min-height: 4.8rem;
   padding: 1rem;
+  transition:
+    color var(--transition-duration) ease-in-out,
+    background var(--transition-duration) ease-in-out;
   width: fit-content;
 
   &:hover,
@@ -41,6 +40,10 @@
       background-color: var(--sec-color);
       color: var(--main-color);
     }
+
+    svg {
+      color: var(--main-color);
+    }
   }
 
   @include mq.mq($from: l) {
@@ -49,20 +52,46 @@
 
   svg {
     bottom: 1.5rem;
+    color: var(--black-color);
     height: 1.5rem;
     pointer-events: none;
     position: absolute;
+    transition: transform var(--transition-duration) ease-in-out;
     right: 1.5rem;
     width: 1.5rem;
   }
 }
 
+.releases-controls__filter-wrapper {
+  padding: 1rem 3.5rem 1rem 1rem;
+  pointer-events: none;
+  position: relative;
+}
+
 .releases-controls__filter {
   appearance: none;
   background-color: var(--main-color);
-  border: none;
+  border: 0;
+  cursor: pointer;
+  font-family: var(--font-family--primary);
+  font-size: var(--font-size-small);
   height: 100%;
+  pointer-events: auto;
+  position: static;
+  transition:
+    color var(--transition-duration) ease-in-out,
+    background var(--transition-duration) ease-in-out;
   width: 100%;
+
+  @include mq.mq($from: l) {
+    font-size: var(--font-size-default);
+  }
+
+  &:open {
+    + svg {
+      transform: rotate(180deg);
+    }
+  }
 }
 
 .releases {
