@@ -23,12 +23,12 @@ This project is a rebuild of the original [Crux Axul](https://github.com/videoth
 - Releases page can be filtered by ascending / descending releases
 - Mobile puts the nav into an classic overlay /w hamburger
 - An ExpandableText component makes it possible to control if and how longer texts can be expanded / collapsed
+- "Filter by artist" on Release view
 
 ## To-Do
 
 - Still some refactoring of views and CSS needed
 - Design could be nicer, though the mindset here is also progressive enhancement and not "from scratch"
-- Add "filter by artist" on Release view
 
 ## Deployment Status
 [![Netlify Status](https://api.netlify.com/api/v1/badges/7a9099ab-7405-4a4b-9158-9fd381b5df26/deploy-status)](https://app.netlify.com/sites/admiring-einstein-59e50c/deploys)
