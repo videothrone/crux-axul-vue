@@ -6,7 +6,7 @@
         <a :href="release.releaseLink" rel="noreferrer noopener" target="_blank">
           <img :src="`/assets/img/${release.releaseImg}`"
             :alt="`Cover of ${release.releaseTitle} by ${release.releaseArtist}`" class="content__home-img" width="500"
-            height="500" />
+            height="500" loading="eager" fetchpriority="high" />
         </a>
       </div>
       <div>

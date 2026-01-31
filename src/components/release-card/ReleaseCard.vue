@@ -1,7 +1,7 @@
 <template>
   <article class="release-card" :class="$attrs.class">
     <div class="release-card__image-wrapper">
-      <img :src="`/assets/img/${releaseImg}`" :alt="`Cover of ${releaseTitle} by ${releaseArtist}`" class="release-card__image" loading="lazy" />
+      <img :src="`/assets/img/${releaseImg}`" :alt="`Cover of ${releaseTitle} by ${releaseArtist}`" class="release-card__image" loading="lazy" width="500" height="500" />
     </div>
 
     <div class="release-card__info">
