@@ -9,7 +9,9 @@
   height: 100%;
   overflow: hidden;
   position: relative;
-  transition: color 0.3s ease-out, background 0.3s ease-in;
+  transition:
+    color 0.3s ease-out,
+    background 0.3s ease-in;
 
   &:hover,
   &:focus-visible {
@@ -44,7 +46,9 @@
 
 .release-card__image {
   aspect-ratio: 1 / 1;
+  display: block;
   flex-shrink: 0;
+  height: auto;
   object-fit: cover;
   position: relative;
   width: 100%;
