@@ -1,25 +1,30 @@
 // Fonts
 @font-face {
-  font-family: 'UnifrakturCook-Bold-Terrible';
-  src: url('@/assets/fonts/UnifrakturCook-Bold-Terrible.otf') format('opentype');
+  font-family: "UnifrakturCook-Bold-Terrible";
+  src: url("@/assets/fonts/UnifrakturCook-Bold-Terrible.otf") format("opentype");
+  font-display: swap;
 }
 
 @font-face {
-  font-family: 'Futur2';
-  src: url('@/assets/fonts/futur2.otf') format('opentype');
+  font-family: "Futur2";
+  src: url("@/assets/fonts/futur2.otf") format("opentype");
+  font-display: swap;
 }
 
 @font-face {
-  font-family: 'AlteHaasGroteskBold';
-  src: url('@/assets/fonts/AlteHaasGroteskBold.ttf') format('opentype');
+  font-family: "AlteHaasGroteskBold";
+  src: url("@/assets/fonts/AlteHaasGroteskBold.ttf") format("opentype");
+  font-display: swap;
 }
 
 @font-face {
-  font-family: 'AlteHaasGroteskRegular';
-  src: url('@/assets/fonts/AlteHaasGroteskRegular.ttf') format('truetype');
+  font-family: "AlteHaasGroteskRegular";
+  src: url("@/assets/fonts/AlteHaasGroteskRegular.ttf") format("truetype");
+  font-display: swap;
 }
 
 @font-face {
-  font-family: 'DidacticGothic';
-  src: url('@/assets/fonts/DidactGothic-Regular.otf') format('opentype');
+  font-family: "DidacticGothic";
+  src: url("@/assets/fonts/DidactGothic-Regular.otf") format("opentype");
+  font-display: swap;
 }
