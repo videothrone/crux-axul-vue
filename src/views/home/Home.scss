@@ -20,9 +20,9 @@
 
 #content__home-left {
   @include mq.mq($from: xl) {
+    align-self: flex-start;
     position: sticky;
     top: 4rem;
-    align-self: flex-start;
   }
 }
 
