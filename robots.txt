@@ -1,6 +1,27 @@
-User-agent: *
-Disallow: /
+# Allow Google and Bing
+User-agent: Googlebot
+Allow: /
 
+User-agent: Bingbot
+Allow: /
+
+# Allow other legitimate search engines
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: Yandex
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+# Block AI crawlers and scrapers
 User-agent: AhrefsBot
 Disallow: /
 
@@ -52,11 +73,12 @@ Disallow: /
 User-agent: ImagesiftBot
 Disallow: /
 
-User-agent: Omgilibot
-Disallow: /
-
 User-agent: Omgili
 Disallow: /
 
 User-agent: YouBot
 Disallow: /
+
+# Allow all other bots
+User-agent: *
+Allow: /
