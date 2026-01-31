@@ -20,6 +20,15 @@ export default defineConfig({
       },
     },
   },
+  build: {
+    cssCodeSplit: true,
+    minify: "terser",
+    terserOptions: {
+      compress: {
+        drop_console: true,
+      },
+    },
+  },
   optimizeDeps: {
     exclude: ["oh-vue-icons/icons"],
   },
