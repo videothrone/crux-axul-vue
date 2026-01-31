@@ -1,0 +1,33 @@
+# Cache static assets aggressively
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Cache JS and CSS chunks
+/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+# Cache fonts
+/src/assets/fonts/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Cache images but allow revalidation
+/assets/img/*
+  Cache-Control: public, max-age=604800, stale-while-revalidate=86400
+
+# Pre-rendered HTML - kurzer Cache mit stale-while-revalidate
+/*.html
+  Cache-Control: public, max-age=3600, stale-while-revalidate=86400
+
+# Main index.html - kein Cache für SPA-Routing
+/index.html
+  Cache-Control: public, max-age=0, must-revalidate
+
+# Security headers for all pages
+/*
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: geolocation=(), microphone=(), camera=()
