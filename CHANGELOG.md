@@ -7,6 +7,32 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [1.1.3] - 2026-02-15
+* Add custom Vite plugin to preload latest release image
+* Add Netlify caching/security headers & optimize build config
+* Relax robots.txt: allow major search engines
+* Remove HTML plugin and font preloads
+* Fix releaseCard image layout
+* Preload fonts, add vite HTML plugin & chunks
+* Add image dimensions and loading hints to Home and ReleaseCard
+* Add terser dependency
+* Add terser minify, drop console and CSS split
+* Add font-display swap to fonts to improve loading
+* Make left side of releaseDetails sticky on scroll on desktop
+* Adjust SCSS order in home.scss
+* Make #content__home-left sticky on scroll on desktop
+* Add .nvmrc file
+* Update dependencies
+* Update Readme
+* Adjust Home "out now" element transition
+* Adjust Releases styles for filter
+* Adjust artist filter to »Releases«
+* Add artist filter to »Releases«
+* Replace styles @import with @use in »Links«
+* Reformat »ExpandableText«
+* Add .npmrc
+* Add vue-eslint-parser
+
 ## [1.1.2] - 2025-03-21
 * Fix unicode pseudo elem position on ReleaseCard
 * Add JSdoc to fetchData helper function
