@@ -56,3 +56,11 @@ npm run build
 ```sh
 npm run lint
 ```
+
+### Safe Dependency Update
+
+```sh
+npm run update-safe
+```
+
+This script installs dependencies with a 7-day delay mechanism to protect against recently hijacked NPM packages.
