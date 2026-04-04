@@ -6,13 +6,13 @@
 
   @include mq.mq($until: l) {
     display: flex;
-    font-size: 3rem;
+    font-size: 1.5rem;
     margin-top: 0;
   }
 
   @include mq.mq($from: l) {
-    font-size: calc(1rem + 2vmin);
-    margin-top: 2.5rem;
+    font-size: calc(0.625rem + 2vmin);
+    margin-top: 1.5625rem;
   }
 }
 
@@ -26,14 +26,20 @@
   width: auto;
 }
 
+// Auf lila Hintergrund schwarze Links (desktop)
+@include mq.mq($from: xl) {
+  .header__menu ul li a {
+    color: var(--black-color);
+  }
+}
+
 .header__menu-button {
   appearance: none;
   background: none;
   border: none;
   cursor: pointer;
   display: block;
-  /* margin: -0.5rem -0.5rem 0 0; */
-  width: 5rem;
+  width: 3.125rem;
 
   @include mq.mq($from: xl) {
     display: none;
@@ -46,18 +52,18 @@
   background-color: var(--main-color);
   content: "";
   display: block;
-  height: 0.4rem;
-  margin: 0.6rem 0;
+  height: 4px;
+  margin: 6px 0;
   transition: 0.3s;
   width: 100%;
 }
 
 .header__menu-button.active::before {
-  transform: translate(0, 1rem) rotate(-45deg);
+  transform: translate(0, 0.625rem) rotate(-45deg);
 }
 
 .header__menu-button.active::after {
-  transform: translate(0, -1rem) rotate(45deg);
+  transform: translate(0, -0.625rem) rotate(45deg);
 }
 
 .header__menu-button.active .header__menu-button-bar {
@@ -75,9 +81,15 @@
   width: 1px;
 }
 
-.nav-list-container {
-  border-bottom: 0.3rem dashed var(--main-color);
+.nav-triangle {
+  display: none;
 
+  @include mq.mq($from: xl) {
+    display: block;
+  }
+}
+
+.nav-list-container {
   @include mq.mq($until: xl) {
     background-color: var(--black-color);
     bottom: 0;
@@ -89,13 +101,43 @@
     transition: background-color 0.2s;
     visibility: hidden;
   }
+
+  @include mq.mq($from: xl) {
+    background-color: var(--main-color);
+    margin-right: -1.25rem;
+    padding-bottom: 0.5rem;
+    padding-right: 1.25rem;
+    padding-top: 0.5rem;
+    position: relative;
+
+    .nav-triangle {
+      bottom: 0;
+      height: 100%;
+      position: absolute;
+      right: calc(100% - 2rem);
+      top: 0;
+      width: auto;
+      z-index: -1;
+    }
+
+    // Hintergrundfarbe bis zum rechten Viewport-Rand
+    &::after {
+      background-color: var(--main-color);
+      bottom: 0;
+      content: "";
+      left: 100%;
+      position: absolute;
+      top: 0;
+      width: 100vw;
+    }
+  }
 }
 
 .nav-list-container--open {
   background-color: var(--black-color);
   overflow-x: hidden;
   overflow-y: scroll;
-  padding-top: 12rem;
+  padding-top: 7.5rem;
   visibility: visible;
   width: 100vw;
   z-index: 103;
@@ -107,14 +149,14 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  gap: 4rem 0;
+  gap: 2.5rem 0;
   justify-content: flex-end;
   position: relative;
 
   @include mq.mq($until: xl) {
     flex-direction: column;
     justify-content: start;
-    margin-top: 2rem;
+    margin-top: 1.25rem;
   }
 
   @include mq.mq($from: xl) {
@@ -138,7 +180,7 @@
   }
 
   @include mq.mq($from: xl) {
-    margin: 0.5rem 2rem;
+    margin: 0.3125rem 1.25rem;
   }
 }
 
