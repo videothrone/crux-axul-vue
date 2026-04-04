@@ -11,15 +11,7 @@
       >
         {{ sortOrder === 'asc' ? 'Newest ↑' : 'Oldest ↓' }}
       </button>
-      <div class="releases-controls__filter-wrapper">
-        <select class="releases-controls__filter" v-model="selectedArtist">
-          <option value="all">All</option>
-          <option v-for="artist in uniqueArtists" :key="artist" :value="artist">
-            {{ artist }}
-          </option>
-        </select>
-        <v-icon name="hi-chevron-down" aria-hidden="true" />
-      </div>
+      <ArtistFilter v-model="selectedArtist" :options="uniqueArtists" />
     </div>
 
     <ul class="releases">
@@ -45,6 +37,7 @@
 import { ref, computed, onMounted } from 'vue';
 import Loader from '@/components/loader/Loader.vue';
 import ReleaseCard from '@/components/release-card/ReleaseCard.vue';
+import ArtistFilter from '@/components/artist-filter/ArtistFilter.vue';
 import { fetchData } from '@/helpers/helperFunctions.js';
 
 const content = ref([]);

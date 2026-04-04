@@ -1,0 +1,88 @@
+@use "sass-mq/mq";
+@use "@/assets/scss/mixins" as *;
+
+.artist-filter {
+  position: relative;
+}
+
+.artist-filter__trigger {
+  align-items: center;
+  appearance: none;
+  background-color: var(--main-color);
+  border: 0;
+  color: var(--black-color);
+  cursor: pointer;
+  display: flex;
+  font-family: var(--font-family--primary);
+  font-size: var(--font-size-small);
+  gap: 0.5rem;
+  min-width: 10rem;
+  padding: 0.625rem 1.25rem;
+  transition:
+    color var(--transition-duration) ease-in-out,
+    background var(--transition-duration) ease-in-out;
+
+  &:hover,
+  &:focus-visible,
+  &[aria-expanded="true"] {
+    background-color: var(--sec-color);
+    color: var(--main-color);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--sec-color);
+    outline-offset: 2px;
+  }
+
+  @include mq.mq($from: l) {
+    font-size: var(--font-size-default);
+  }
+}
+
+.artist-filter__caret {
+  flex-shrink: 0;
+  margin-left: auto;
+  transition: transform var(--transition-duration) ease-in-out;
+
+  .artist-filter__trigger[aria-expanded="true"] & {
+    transform: rotate(180deg) scale(1.2);
+  }
+}
+
+.artist-filter__listbox {
+  @include list-reset();
+
+  background-color: var(--main-color);
+  box-shadow: var(--box-shadow-popover);
+  left: 0;
+  min-width: 100%;
+  position: absolute;
+  top: 100%;
+  z-index: 10;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.artist-filter__option {
+  color: var(--black-color);
+  cursor: pointer;
+  font-family: var(--font-family--primary);
+  font-size: var(--font-size-small);
+  padding: 0.625rem 1.25rem;
+  transition:
+    color var(--transition-duration) ease-in-out,
+    background var(--transition-duration) ease-in-out;
+
+  &--selected {
+    color: var(--sec-color);
+    font-style: italic;
+  }
+
+  &:hover,
+  &--focused {
+    background-color: var(--sec-color);
+    color: var(--main-color);
+  }
+}
