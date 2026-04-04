@@ -3,6 +3,9 @@
   font-family: "UnifrakturCook-Bold-Terrible";
   src: url("@/assets/fonts/UnifrakturCook-Bold-Terrible.otf") format("opentype");
   font-display: swap;
+  ascent-override: 180%;
+  descent-override: 20%;
+  line-gap-override: 0%;
 }
 
 @font-face {
