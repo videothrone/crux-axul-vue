@@ -7,6 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [1.2.0] - 2026-04-04
+* Add animation to header nav links on mobile
+* Rebuild artist filter to own styled component
+* Add dynamic font scaling via utopia.fyi
+* UnifrakturCook font ascent / decent
+* Add role and aria attributes to »Loader« component
+* Add safe dependency update script
+* Update dependencies
+
 ## [1.1.3] - 2026-02-15
 * Add custom Vite plugin to preload latest release image
 * Add Netlify caching/security headers & optimize build config
