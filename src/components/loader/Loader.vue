@@ -1,6 +1,6 @@
 <template>
   <div className='loader__wrapper'>
-    <div className='loader loader--loading'>
+    <div className='loader loader--loading' role="status" aria-live="polite" aria-label='Loading...'>
       <div></div>
       <div></div>
       <div></div>
