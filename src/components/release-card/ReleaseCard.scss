@@ -35,11 +35,11 @@
   width: 100%;
 
   &::after {
-    bottom: -4rem;
+    bottom: -2.5rem;
     color: var(--sec-color);
     content: "✺";
-    font-size: 7rem;
-    left: -3rem;
+    font-size: 4.375rem;
+    left: -1.875rem;
     position: absolute;
   }
 }
@@ -59,8 +59,8 @@
   display: flex;
   flex-direction: column;
   flex-grow: 1;
-  gap: 0.2rem;
-  padding: 2rem;
+  gap: 2px;
+  padding: 1.25rem;
   position: static;
 }
 
@@ -68,7 +68,7 @@
   color: var(--black-color);
   font-size: var(--font-size-small);
   line-height: 1.1;
-  margin-bottom: 1.6rem;
+  margin-bottom: 1rem;
   position: static;
   z-index: 1;
 

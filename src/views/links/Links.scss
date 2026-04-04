@@ -6,30 +6,30 @@
 
   background-color: var(--main-color);
   border-left: var(--border-left-white);
-  margin-top: 2rem;
-  padding: 2rem;
+  margin-top: 1.25rem;
+  padding: 1.25rem;
   position: relative;
   width: 100%;
 
   @include mq.mq($from: xl) {
-    border-left: 1rem solid var(--sec-color);
+    border-left: 0.625rem solid var(--sec-color);
   }
 
   &:after {
-    bottom: -6.5rem;
+    bottom: -4.0625rem;
     content: "✺";
-    font-size: 10rem;
+    font-size: 6.25rem;
     position: absolute;
     right: 0;
 
     @include mq.mq($from: l) {
-      bottom: -9.2rem;
-      font-size: 14rem;
+      bottom: -5.75rem;
+      font-size: 8.75rem;
     }
 
     @include mq.mq($from: xl) {
-      bottom: -11.9rem;
-      font-size: 18rem;
+      bottom: -7.4375rem;
+      font-size: 11.25rem;
     }
   }
 
@@ -43,7 +43,7 @@
 
   @include mq.mq($until: xl) {
     &:not(:last-of-type) {
-      margin-bottom: 1.5rem;
+      margin-bottom: 0.9375rem;
     }
   }
 

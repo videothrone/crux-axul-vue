@@ -1,3 +1,4 @@
+@forward "reset";
 @forward "variables";
 @forward "fonts";
 @forward "animations";
@@ -20,14 +21,13 @@ $breakpoints: (
 
 @use "@/assets/scss/mixins" as *;
 
-* {
-  box-sizing: border-box;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+html {
+  overflow-x: clip;
 }
 
-html {
-  font-size: 62.5%;
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
@@ -50,25 +50,25 @@ body {
 .header__content {
   display: flex;
   justify-content: space-between;
-  margin: 4rem 2rem 2rem;
+  margin: 2.5rem 1.25rem 1.25rem;
 
   @include mq.mq($until: xl) {
-    height: 8rem;
+    height: 5rem;
   }
 }
 
 .header__logo {
   display: block;
   height: auto;
-  width: 30.7rem;
+  width: 19.1875rem;
 
   @include mq.mq($until: m) {
-    max-width: 10rem;
-    padding-bottom: 2rem;
+    max-width: 6.25rem;
+    padding-bottom: 1.25rem;
   }
 
   @include mq.mq($from: navigation) {
-    padding-left: 2.5rem;
+    padding-left: 1.5625rem;
   }
 }
 
@@ -114,7 +114,7 @@ a.link--inverted {
 }
 
 .cxa-circle-logo {
-  height: 8rem;
+  height: 5rem;
 
   @include mq.mq($from: xl) {
     height: 30vmin;
@@ -128,21 +128,21 @@ a.link--inverted {
   font-size: var(--font-size-default);
   justify-content: center;
   line-height: 1.4;
-  margin: 0 2rem 2rem;
+  margin: 0 1.25rem 1.25rem;
 
   @include mq.mq($until: m) {
     font-size: var(--font-size-small);
   }
 
   @include mq.mq($from: xxl) {
-    margin: 0 2rem 2rem 35rem;
+    margin: 0 1.25rem 1.25rem 21.875rem;
   }
 }
 
 .hrr {
   border: none;
-  border-top: 0.2rem dashed var(--main-color);
-  margin: 1rem 0;
+  border-top: 2px dashed var(--main-color);
+  margin: 0.625rem 0;
 }
 
 .stars {

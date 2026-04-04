@@ -13,6 +13,15 @@
       <span class="header__menu-text" v-else>Navigation closed</span>
     </button>
     <div class="nav-list-container" :class="{ 'nav-list-container--open': isMenuOpen }">
+      <svg class="nav-triangle" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 100" preserveAspectRatio="none">
+        <defs>
+          <clipPath id="nav-clip">
+            <polygon points="0,100 100,0 150,0 150,100" />
+          </clipPath>
+        </defs>
+        <polygon points="0,100 100,0 150,0 150,100" fill="var(--main-color)" />
+        <line x1="100" y1="0" x2="0" y2="100" stroke="var(--sec-color)" stroke-width="10" stroke-linecap="square" vector-effect="non-scaling-stroke" clip-path="url(#nav-clip)" />
+      </svg>
       <ul class="nav-list" role="list" :class="{ active: isMenuOpen }">
         <li class="nav-list__item" role="listitem" @click="closeNavMenu">
           <RouterLink :to="{ name: 'releases' }" id="releases" target="_self"

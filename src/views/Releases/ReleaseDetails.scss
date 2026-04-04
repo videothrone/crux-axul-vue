@@ -22,13 +22,13 @@
 
   @include mq.mq($until: xl) {
     background-color: var(--black-color);
-    padding-bottom: 2rem;
+    padding-bottom: 1.25rem;
     width: 100%;
   }
 
   @include mq.mq($from: l) {
     font-size: var(--font-size-default);
-    padding-right: 2rem;
+    padding-right: 1.25rem;
   }
 }
 
@@ -38,12 +38,12 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  max-width: 50rem;
+  max-width: 31.25rem;
 
   @include mq.mq($from: xl) {
     align-self: flex-start;
     flex-basis: 50%;
-    padding: 5rem;
+    padding: 3rem;
     position: sticky;
     top: 0;
   }
@@ -72,9 +72,9 @@
   color: var(--main-color);
   display: flex;
   flex-direction: column;
-  margin-bottom: 1.5rem;
-  margin-top: 1.5rem;
-  padding: 0 2rem;
+  margin-bottom: 0.9375rem;
+  margin-top: 0.9375rem;
+  padding: 0 1.25rem;
   width: 100%;
 
   & * {
@@ -89,20 +89,20 @@
 
 .content__release-promotext {
   background-color: var(--main-color);
-  padding: 2rem;
+  padding: 1.25rem;
 
   @include mq.mq($from: l) {
     flex-basis: 50%;
-    padding: 5rem;
+    padding: 3rem;
   }
 }
 
 .content__release-promotext-blurb {
-  margin-bottom: 4rem;
+  margin-bottom: 2.5rem;
 }
 
 .content__release-promotext-blurb .expandable-text__toggle {
-  border: 0.2rem dashed var(--sec-color);
+  border: 2px dashed var(--sec-color);
   color: var(--sec-color);
 }
 
@@ -124,6 +124,6 @@
 
 hr.hrr--content-release {
   border: none;
-  border-top: 0.2rem dashed var(--sec-color);
-  margin: 2rem 0;
+  border-top: 2px dashed var(--sec-color);
+  margin: 1.25rem 0;
 }
