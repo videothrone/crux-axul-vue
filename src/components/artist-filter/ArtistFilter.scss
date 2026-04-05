@@ -53,7 +53,10 @@
   @include list-reset();
 
   background-color: var(--main-color);
-  box-shadow: var(--box-shadow-popover);
+  box-shadow:
+    0 4px 8px -2px rgba(0, 0, 0, 0.1),
+    -2px 0 4px -2px rgba(0, 0, 0, 0.1),
+    2px 0 4px -2px rgba(0, 0, 0, 0.1);
   left: 0;
   min-width: 100%;
   position: absolute;
