@@ -26,7 +26,7 @@
   width: auto;
 }
 
-// Auf lila Hintergrund schwarze Links (desktop)
+// Black links on lilac background (desktop)
 @include mq.mq($from: xl) {
   .header__menu ul li a {
     color: var(--black-color);
@@ -120,26 +120,30 @@
       z-index: -1;
     }
 
-    // Hintergrundfarbe bis zum rechten Viewport-Rand
-    &::after {
-      background-color: var(--main-color);
-      bottom: 0;
-      content: "";
-      left: 100%;
-      position: absolute;
-      top: 0;
-      width: 100vw;
+    @include mq.mq($from: xxl) {
+      // Extend background from the centered body edge to the viewport edge.
+      &::after {
+        background-color: var(--main-color);
+        bottom: 0;
+        content: "";
+        left: 100%;
+        position: absolute;
+        top: 0;
+        width: calc((100vw - var(--global-max-width)) / 2);
+      }
     }
   }
 }
 
 .nav-list-container--open {
   background-color: var(--black-color);
+  left: 0;
   overflow-x: hidden;
   overflow-y: scroll;
   padding-top: 7.5rem;
+  right: 0;
   visibility: visible;
-  width: 100vw;
+  width: auto;
   z-index: 103;
 }
 
