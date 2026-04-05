@@ -19,16 +19,16 @@
 .content__release-back-button {
   font-size: var(--font-size-large);
   height: fit-content;
+  padding: 1.25rem;
 
   @include mq.mq($until: xl) {
     background-color: var(--black-color);
-    padding-bottom: 1.25rem;
     width: 100%;
   }
 
   @include mq.mq($from: l) {
     font-size: var(--font-size-default);
-    padding-right: 1.25rem;
+    padding: 1.25rem;
   }
 }
 
@@ -39,6 +39,11 @@
   flex-direction: column;
   justify-content: flex-start;
   max-width: 31.25rem;
+  padding: 2rem;
+
+  @include mq.mq($from: l) {
+    padding: 2rem;
+  }
 
   @include mq.mq($from: xl) {
     align-self: flex-start;
@@ -89,7 +94,7 @@
 
 .content__release-promotext {
   background-color: var(--main-color);
-  padding: 1.25rem;
+  padding: 2rem;
 
   @include mq.mq($from: l) {
     flex-basis: 50%;
