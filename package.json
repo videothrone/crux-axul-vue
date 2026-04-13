@@ -6,7 +6,7 @@
     "build": "vite build",
     "preview": "vite preview --port 5050",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore",
-    "update-safe": "npm install --min=7d"
+    "update-safe": "npm install --min-release-age 7"
   },
   "dependencies": {
     "npm-check-updates": "^19.6.3",

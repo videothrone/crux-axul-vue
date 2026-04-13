@@ -37,8 +37,10 @@ This project is a rebuild of the original [Crux Axul](https://github.com/videoth
 ## Project Setup
 
 ```sh
-npm install
+npm install --min-release-age 7
 ```
+
+**Note:** The flag `--min-release-age 7` is set globally in `.npmrc` to only install packages whose releases are at least 7 days old. On Netlify, this is automatically applied since `.npmrc` is considered. For manual installations, you can use the flag explicitly or rely on the global setting.
 
 ### Compile and Hot-Reload for Development
 
